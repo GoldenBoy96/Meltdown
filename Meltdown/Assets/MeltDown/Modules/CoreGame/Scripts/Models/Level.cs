@@ -8,6 +8,7 @@ namespace MeltDown
     [Serializable]
     public class Level : ICloneable<Level>
     {
+        [SerializeField] Guid _id;
     }
 
 }
