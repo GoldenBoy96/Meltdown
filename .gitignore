@@ -82,4 +82,7 @@ crashlytics-build.properties
 # User Settings
 **/[Uu]ser[Ss]ettings/
 
+# Dirty Place
+**/[Dd]irty[Pp]lace/
+
 
