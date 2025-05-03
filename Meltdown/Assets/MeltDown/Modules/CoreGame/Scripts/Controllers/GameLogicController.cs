@@ -6,6 +6,6 @@ namespace MeltDown
 {
     public class GameLogicController : MonoBehaviour
     {
-    
+
     }
 }

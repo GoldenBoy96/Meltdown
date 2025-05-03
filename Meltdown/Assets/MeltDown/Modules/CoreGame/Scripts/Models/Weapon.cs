@@ -15,7 +15,8 @@ namespace MeltDown
         [SerializeField] float _power;
         [SerializeField] float _cooldown;
         [SerializeField] float _range;
-        [SerializeField] float _angle; // "V" shape attack 
+        [SerializeField] float _angle;
+        [SerializeField] float _direction;
 
         public Guid Id
         {
@@ -32,6 +33,7 @@ namespace MeltDown
         public float Cooldown { get => _cooldown; set => _cooldown = value; }
         public float Range { get => _range; set => _range = value; }
         public float Angle { get => _angle; set => _angle = value; }
+        public float Direction { get => _direction; set => _direction = value; }
 
         public override bool Equals(object obj)
         {
@@ -51,7 +53,7 @@ namespace MeltDown
 
         public override string ToString()
         {
-            return $"{{{nameof(WeaponName)}={WeaponName}, {nameof(Description)}={Description}, {nameof(Power)}={Power.ToString()}, {nameof(Cooldown)}={Cooldown.ToString()}, {nameof(Range)}={Range.ToString()}, {nameof(Angle)}={Angle.ToString()}}}";
+            return $"{{{nameof(WeaponName)}={WeaponName}, {nameof(Description)}={Description}, {nameof(Power)}={Power.ToString()}, {nameof(Cooldown)}={Cooldown.ToString()}, {nameof(Range)}={Range.ToString()}, {nameof(Angle)}={Angle.ToString()}, {nameof(Direction)}={Direction.ToString()}}}";
         }
     }
 }
