@@ -15,6 +15,7 @@ namespace MeltDown
         [Header("Child Component")]
         [SerializeField] protected Rigidbody2D _rb;
         [SerializeField] protected AlertIconController _alertIcon;
+        [SerializeField] protected RectTransform _alert;
 
         [Header("Runtime Data")]
         [SerializeField] protected Monster _monster;
@@ -34,11 +35,8 @@ namespace MeltDown
         public virtual void Init(GameViewController gameViewController)
         {
             _gameViewController = gameViewController;
-            //RectTransform alert = Instantiate(_gameViewController.AlertIconPrefab, _gameViewController.AlertCanvas.transform);
-            //Debug.Log(alert);
-            //var alertScript = alert.GetComponent<AlertIconController>();
-            //alertScript.ico = alert;
-            //alertScript.mainCam = _gameViewController.MainCam;
+            _alert = Instantiate(_gameViewController.AlertIconPrefab, _gameViewController.AlertRect.transform);
+            _alert.GetComponent<AlertIconController>().Init(transform, _gameViewController.AlertRect, _alert);
         }
 
         public virtual void Update()
@@ -98,6 +96,9 @@ namespace MeltDown
                 Destroy(gameObject);
             }
             if (_monster.Hp > _monster.MaxHp) _monster.Hp = _monster.MaxHp;
+        }
+        private void OnDestroy()
+        {
         }
     }
 }

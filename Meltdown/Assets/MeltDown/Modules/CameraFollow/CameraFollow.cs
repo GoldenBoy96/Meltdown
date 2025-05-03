@@ -24,7 +24,7 @@ public class CameraFollow : MonoBehaviour
     void LateUpdate()
     {
         // Camera follow position
-        transform.position = new Vector3(followTransform.position.x, followTransform.position.y, transform.position.z);
+        cam.transform.position = new Vector3(followTransform.position.x, followTransform.position.y, cam.transform.position.z);
 
         // Check movement
         float speed = playerRb.velocity.magnitude;

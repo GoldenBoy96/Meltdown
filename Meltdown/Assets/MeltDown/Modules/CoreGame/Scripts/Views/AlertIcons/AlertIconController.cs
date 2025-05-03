@@ -27,6 +27,18 @@ public class AlertIconController : MonoBehaviour
     public RectTransform indicatorUI;
     public Image indicatorImage;
 
+    private void OnEnable()
+    {
+        SetOpacity(opacityLevel0);
+    }
+
+    public void Init(Transform enemy, RectTransform canvasRect, RectTransform indicatorUI)
+    {
+        this.enemy = enemy;
+        mainCamera = Camera.main;
+        this.canvasRect = canvasRect;
+        this.indicatorUI = indicatorUI;
+    }
     void Update()
     {
         if (enemy == null || mainCamera == null || canvasRect == null || indicatorUI == null) return;
@@ -36,7 +48,6 @@ public class AlertIconController : MonoBehaviour
         bool isOffScreen = screenPos.x < 0 || screenPos.x > Screen.width ||
             screenPos.y < 0 || screenPos.y > Screen.height;
 
-        Debug.Log(isOffScreen);
         //indicatorImage.gameObject.SetActive(isOffScreen);
 
         if (isOffScreen)
@@ -64,10 +75,6 @@ public class AlertIconController : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        SetOpacity(opacityLevel0);
-    }
 
     public void SetOpacity(float opacity)
     {
@@ -99,9 +106,13 @@ public class AlertIconController : MonoBehaviour
         {
             _opacity = opacityLevel0;
         }
-        Debug.Log(distance + " |" + _opacity);
         Color color = indicatorImage.color;
         color.a = Mathf.Clamp01(_opacity); // Clamp to [0, 1] range
         indicatorImage.color = color;
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 }

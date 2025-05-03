@@ -88,7 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3cc791994900741850ffde04b74208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCam: {fileID: 0}
-  alertIcon: {fileID: 0}
-  canvas: {fileID: 0}
-  screenBorderOffset: 30
+  _opacity: 0
+  enemy: {fileID: 0}
+  mainCamera: {fileID: 0}
+  canvasRect: {fileID: 0}
+  indicatorUI: {fileID: 0}
+  indicatorImage: {fileID: 984457352375567967}

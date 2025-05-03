@@ -23,7 +23,7 @@ public class MonsterCampController : MonoBehaviour
         _monsterCamp = _monsterCampSO.Data;
         foreach (var monster in _registeredMonster)
         {
-            monster.RegisterCamp(this);
+            if (monster != null) monster.RegisterCamp(this);
         }
     }
 

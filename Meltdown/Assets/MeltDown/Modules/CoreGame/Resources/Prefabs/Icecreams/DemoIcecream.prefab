@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6604264981535318196}
   m_Layer: 0
   m_Name: DemoIcecream
-  m_TagString: Untagged
+  m_TagString: Icecream
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +107,11 @@ MonoBehaviour:
     _hp: 0
     _def: 0
     _meltDownPerSecond: 0
+    _pickUpTime: 0
+  _isPickingUp: 0
+  _enablePickUp: 0
+  _currentPickUpTime: 0
+  _isMeltDown: 1
 --- !u!61 &5676217267625614841
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -151,7 +156,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.05
 --- !u!61 &6604264981535318196
 BoxCollider2D:
   m_ObjectHideFlags: 0
