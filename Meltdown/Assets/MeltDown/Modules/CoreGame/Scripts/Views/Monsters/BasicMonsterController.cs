@@ -13,8 +13,9 @@ namespace MeltDown
         [Header("Runtime Data")]
         [SerializeField] IcecreamController _chasingIcecream;
 
-        private void Update()
+        public override void Update()
         {
+            base.Update();
             ChaseIcecream();
         }
         public void DetectIcecream(IcecreamController chasingIcecream)
@@ -23,6 +24,7 @@ namespace MeltDown
         }
         public void ChaseIcecream()
         {
+            if (_isReturnToCamp) return;
             if (_chasingIcecream == null) return; 
             if (Vector3.Distance(transform.position, _chasingIcecream.transform.position) <= _monster.AttackRange)
             {
@@ -45,7 +47,6 @@ namespace MeltDown
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("OnTriggerEnter2D");
             collision.TryGetComponent<IcecreamController>(out var icecream);
             if (icecream != null)
             {
@@ -55,7 +56,6 @@ namespace MeltDown
 
         public void OnTriggerExit2D(Collider2D collision)
         {
-            Debug.Log("OnTriggerEnter2D");
             collision.TryGetComponent<IcecreamController>(out var icecream);
             if (icecream != null)
             {

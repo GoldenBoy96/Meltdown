@@ -15,8 +15,8 @@ MonoBehaviour:
   _data:
     _weaponName: weapon 0
     _description: khong
-    _power: 0
-    _cooldown: 0
-    _range: 0
+    _power: 50
+    _cooldown: 1
+    _range: 2
     _angle: 0
     _direction: 0

@@ -86,6 +86,7 @@ namespace MeltDown
         {
             Debug.Log("OnTriggerEnter2D");
             collision.TryGetComponent<CharacterController>(out var player);
+            Debug.Log(player);
             if (player != null)
             {
                 _pickUpCharacter = player;

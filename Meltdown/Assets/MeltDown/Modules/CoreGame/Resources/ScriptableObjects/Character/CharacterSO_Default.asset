@@ -15,8 +15,8 @@ MonoBehaviour:
   _data:
     _characterName: Char_1
     _description: khong
-    _maxHp: 0
-    _hp: 0
-    _atk: 0
-    _def: 0
+    _maxHp: 500
+    _hp: 500
+    _atk: 200
+    _def: 50
     _spe: 5

@@ -30,10 +30,12 @@ namespace MeltDown
         private Vector2 _moveInput;
         private bool _isFacingRight = true;
 
+        public Character Character { get => _character; private set => _character = value; }
+
         void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
-            _character = _characterSO.Data;
+            Character = _characterSO.Data;
 
             if (_icecream == null) _icecream = _icecreamHolder.GetComponentInChildren<IcecreamController>();
             if (_icecream != null)
@@ -41,6 +43,8 @@ namespace MeltDown
                 _icecream.transform.localPosition = Vector3.zero;
                 _icecream.Init(this, _gameViewController);
             }
+
+            Init(null);
         }
 
         public void Init(GameViewController gameViewController)
@@ -48,7 +52,7 @@ namespace MeltDown
             _gameViewController = gameViewController;
 
             // Khởi tạo weapon controller
-            _weaponController.Init(_gameViewController);
+            _weaponController.Init(this, _gameViewController);
             if (_icecream == null) _icecream = _icecreamHolder.GetComponentInChildren<IcecreamController>();
             if (_icecream != null)
             {
@@ -68,7 +72,7 @@ namespace MeltDown
         private void HandleMovement()
         {
             _moveInput = new Vector2(_joystick.Horizontal, _joystick.Vertical);
-            _rb.velocity = _moveInput * _character.Spe;
+            _rb.velocity = _moveInput * Character.Spe;
         }
 
         private void HandleWeaponMovement()
@@ -91,13 +95,13 @@ namespace MeltDown
             {
                 // Flip sang phải
                 _characterVisual.localScale = new Vector3(1, 1, 1);
-                _weapon.localScale = new Vector3(0.3f, 0.3f, 1);
+                //_weapon.localScale = new Vector3(0.3f, 0.3f, 1);
             }
             else if (_moveInput.x < -0.1f)
             {
                 // Flip sang trái
                 _characterVisual.localScale = new Vector3(-1, 1, 1);
-                _weapon.localScale = new Vector3(-0.3f, 0.3f, 1);
+                //_weapon.localScale = new Vector3(-0.3f, 0.3f, 1);
             }
         }
 

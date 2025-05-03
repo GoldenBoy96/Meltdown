@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using static UnityEngine.GraphicsBuffer;
 
 namespace MeltDown
 {
-    public class MonsterController : MonoBehaviour
+    public class MonsterController : MonoBehaviour, IGetDamageable
     {
         [Header("Init Data")]
         [SerializeField] protected MonsterSO _monsterSO;
@@ -17,6 +18,7 @@ namespace MeltDown
         [SerializeField] protected Monster _monster;
         [SerializeField] protected bool _isAttackable = true;
         [SerializeField] protected MonsterCampController _monsterCamp;
+        [SerializeField] protected Vector3 _originalPosition;
         [SerializeField] protected bool _isReturnToCamp = false;
 
         protected GameViewController _gameViewController;
@@ -32,16 +34,47 @@ namespace MeltDown
             _gameViewController = gameViewController;
         }
 
+        public virtual void Update()
+        {
+            CheckReturnToCamp();
+            ReturnToCamp();
+        }
+
         public void RegisterCamp(MonsterCampController monsterCamp)
         {
             _monsterCamp = monsterCamp;
-            if (Vector3.Distance(transform.position, _monsterCamp.transform.position) > _monsterCamp.MonsterCamp.Range)
+            if (_monsterCamp != null)
             {
-                // Direction from camp to monster
-                Vector3 direction = (transform.position - _monsterCamp.transform.position).normalized;
+                if (Vector3.Distance(transform.position, _monsterCamp.transform.position) > _monsterCamp.MonsterCamp.Range)
+                {
+                    // Direction from camp to monster
+                    Vector3 direction = (transform.position - _monsterCamp.transform.position).normalized;
 
-                // New position exactly Range units from the camp
-                transform.position = _monsterCamp.transform.position + direction * _monsterCamp.MonsterCamp.Range;
+                    // New position exactly Range units from the camp
+                    transform.position = _monsterCamp.transform.position + direction * _monsterCamp.MonsterCamp.Range;
+                }
+                _originalPosition = transform.position;
+            }
+        }
+
+        public void CheckReturnToCamp()
+        {
+            if (_monsterCamp == null) return;
+            if (Vector3.Distance(transform.transform.position, _monsterCamp.transform.position) > _monsterCamp.MonsterCamp.Range)
+            {
+                _isReturnToCamp = true;
+            }
+        }
+        public void ReturnToCamp()
+        {
+            if (_monsterCamp == null) return;
+            if (_isReturnToCamp)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, _originalPosition, _monster.Spe * Time.deltaTime);
+                if (Vector3.Distance(transform.transform.position, _originalPosition) <= 0.1f)
+                {
+                    _isReturnToCamp = false;
+                }
             }
         }
         public virtual void TryAttack()
@@ -57,6 +90,17 @@ namespace MeltDown
             _isAttackable = false;
             yield return new WaitForSeconds(_monster.AttackCooldown);
             _isAttackable = true;
+        }
+
+        public void GetDamage(float atk, float power)
+        {
+            _monster.Hp -= IGetDamageable.CalculateTrueDamage(atk, power, _monster.Def);
+            if (_monster.Hp <= 0)
+            {
+                _monster.Hp = 0;
+                Destroy(gameObject);
+            }
+            if (_monster.Hp > _monster.MaxHp) _monster.Hp = _monster.MaxHp;
         }
     }
 }
