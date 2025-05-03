@@ -21,10 +21,19 @@ namespace MeltDown
         public void DetectIcecream(IcecreamController chasingIcecream)
         {
             _chasingIcecream = chasingIcecream;
+            if (_chasingIcecream != null && _monsterCamp != null)
+            {
+                _monsterCamp.TriggerHordeAttack(chasingIcecream);
+            }
         }
         public void ChaseIcecream()
         {
-            if (_isReturnToCamp) return;
+            if (_monsterCamp == null) return;
+            if (_monsterCamp.IsTriggerHordeAttack)
+            {
+                _chasingIcecream = _monsterCamp.IcecreamToChase;
+            }
+
             if (_chasingIcecream == null) return; 
             if (Vector3.Distance(transform.position, _chasingIcecream.transform.position) <= _monster.AttackRange)
             {

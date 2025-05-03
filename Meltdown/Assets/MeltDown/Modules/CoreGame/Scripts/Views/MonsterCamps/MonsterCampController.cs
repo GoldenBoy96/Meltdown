@@ -11,8 +11,12 @@ public class MonsterCampController : MonoBehaviour
 
     [Header("Runtime Data")]
     [SerializeField] MonsterCamp _monsterCamp;
+    [SerializeField] bool _isTriggerHordeAttack = false;
+    [SerializeField] IcecreamController _icecreamToChase;
 
     public MonsterCamp MonsterCamp { get => _monsterCamp; private set => _monsterCamp = value; }
+    public bool IsTriggerHordeAttack { get => _isTriggerHordeAttack; private set => _isTriggerHordeAttack = value; }
+    public IcecreamController IcecreamToChase { get => _icecreamToChase; private set => _icecreamToChase = value; }
 
     private void OnEnable()
     {
@@ -22,4 +26,31 @@ public class MonsterCampController : MonoBehaviour
             monster.RegisterCamp(this);
         }
     }
+
+    private void Update()
+    {
+        CheckStopHordeAttack();
+    }
+
+    public void TriggerHordeAttack(IcecreamController chasingIcecream)
+    {
+        _isTriggerHordeAttack = true;
+        IcecreamToChase = chasingIcecream;
+    }
+
+    public void CheckStopHordeAttack()
+    {
+        if (!IsTriggerHordeAttack) return;
+        if (Vector3.Distance(IcecreamToChase.transform.position, transform.position) > MonsterCamp.Range)
+        {
+            StopHordeAttack();
+        }
+    }
+
+    public void StopHordeAttack()
+    {
+        _isTriggerHordeAttack = false;
+    }
+
+
 }

@@ -19,7 +19,6 @@ namespace MeltDown
         [SerializeField] protected bool _isAttackable = true;
         [SerializeField] protected MonsterCampController _monsterCamp;
         [SerializeField] protected Vector3 _originalPosition;
-        [SerializeField] protected bool _isReturnToCamp = false;
 
         protected GameViewController _gameViewController;
 
@@ -36,7 +35,6 @@ namespace MeltDown
 
         public virtual void Update()
         {
-            CheckReturnToCamp();
             ReturnToCamp();
         }
 
@@ -57,23 +55,14 @@ namespace MeltDown
             }
         }
 
-        public void CheckReturnToCamp()
-        {
-            if (_monsterCamp == null) return;
-            if (Vector3.Distance(transform.transform.position, _monsterCamp.transform.position) > _monsterCamp.MonsterCamp.Range)
-            {
-                _isReturnToCamp = true;
-            }
-        }
         public void ReturnToCamp()
         {
             if (_monsterCamp == null) return;
-            if (_isReturnToCamp)
+            if (!_monsterCamp.IsTriggerHordeAttack)
             {
-                transform.position = Vector3.MoveTowards(transform.position, _originalPosition, _monster.Spe * Time.deltaTime);
-                if (Vector3.Distance(transform.transform.position, _originalPosition) <= 0.1f)
+                if (Vector3.Distance(transform.transform.position, _originalPosition) > 0.1f)
                 {
-                    _isReturnToCamp = false;
+                    transform.position = Vector3.MoveTowards(transform.position, _originalPosition, _monster.Spe * Time.deltaTime);
                 }
             }
         }

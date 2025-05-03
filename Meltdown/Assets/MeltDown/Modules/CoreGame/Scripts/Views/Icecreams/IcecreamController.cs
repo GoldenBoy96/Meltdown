@@ -42,7 +42,11 @@ namespace MeltDown
             else
             {
                 _icecream.Hp -= IGetDamageable.CalculateTrueDamage(atk, power, _icecream.Def);
-                if (_icecream.Hp < 0) _icecream.Hp = 0;
+                if (_icecream.Hp < 0)
+                {
+                    _icecream.Hp = 0;
+                    Debug.Log("Lose Game");
+                }
                 if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
             }
         }
@@ -84,9 +88,7 @@ namespace MeltDown
 
         public void OnTriggerEnter2D(Collider2D collision)
         {
-            Debug.Log("OnTriggerEnter2D");
             collision.TryGetComponent<CharacterController>(out var player);
-            Debug.Log(player);
             if (player != null)
             {
                 _pickUpCharacter = player;

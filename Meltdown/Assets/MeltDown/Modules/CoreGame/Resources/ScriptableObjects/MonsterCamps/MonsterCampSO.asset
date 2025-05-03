@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: MonsterCampSO
   m_EditorClassIdentifier: 
   _data:
-    _range: 10
+    _range: 20

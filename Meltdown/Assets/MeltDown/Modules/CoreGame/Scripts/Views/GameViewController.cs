@@ -11,6 +11,8 @@ namespace MeltDown
 
         [Header("Child Component")]
         [SerializeField] Transform _monsterHolder;
+        [SerializeField] Transform _startPoint;
+        [SerializeField] Transform _endPoint;
 
         [Header("Runtime Component")]
         [SerializeField] CharacterController _player;
