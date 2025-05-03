@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Pool;
 using static UnityEngine.GraphicsBuffer;
@@ -13,6 +14,7 @@ namespace MeltDown
 
         [Header("Child Component")]
         [SerializeField] protected Rigidbody2D _rb;
+        [SerializeField] protected AlertIconController _alertIcon;
 
         [Header("Runtime Data")]
         [SerializeField] protected Monster _monster;
@@ -27,10 +29,16 @@ namespace MeltDown
         private void Start()
         {
             _monster = _monsterSO.Data;
+            Init(GameViewController.Instance);
         }
         public virtual void Init(GameViewController gameViewController)
         {
             _gameViewController = gameViewController;
+            //RectTransform alert = Instantiate(_gameViewController.AlertIconPrefab, _gameViewController.AlertCanvas.transform);
+            //Debug.Log(alert);
+            //var alertScript = alert.GetComponent<AlertIconController>();
+            //alertScript.ico = alert;
+            //alertScript.mainCam = _gameViewController.MainCam;
         }
 
         public virtual void Update()
