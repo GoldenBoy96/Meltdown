@@ -14,6 +14,7 @@ namespace MeltDown
         [SerializeField] bool _isPickingUp = false;
         [SerializeField] bool _enablePickUp = false;
         [SerializeField] float _currentPickUpTime;
+        [SerializeField] bool _isMeltDown = true;
 
         private GameViewController _gameViewController;
         private CharacterController _holderCharacter;
@@ -23,6 +24,7 @@ namespace MeltDown
         {
             _icecream = _icecreamSO.Data;
             if (_holderCharacter == null) _enablePickUp = true;
+            StartCoroutine(MeltDownCoroutine());
         }
         public void Init(CharacterController holderCharacter, GameViewController gameViewController)
         {
@@ -84,6 +86,22 @@ namespace MeltDown
         public void DropDown()
         {
             _enablePickUp = true;
+        }
+
+        IEnumerator MeltDownCoroutine()
+        {
+            yield return new WaitForSeconds(0.1f);
+            if (_isMeltDown)
+            {
+                _icecream.Hp -= _icecream.MeltDownPerSecond / 10f;
+                if (_icecream.Hp < 0)
+                {
+                    _icecream.Hp = 0;
+                    Debug.Log("Lose Game");
+                }
+                if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
+            }
+            StartCoroutine(MeltDownCoroutine());
         }
 
         public void OnTriggerEnter2D(Collider2D collision)
