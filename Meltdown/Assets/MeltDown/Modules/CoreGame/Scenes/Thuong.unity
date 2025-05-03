@@ -131,6 +131,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 99509676}
+  - component: {fileID: 99509678}
   - component: {fileID: 99509675}
   - component: {fileID: 99509674}
   - component: {fileID: 99509677}
@@ -227,6 +228,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &99509678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99509673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61400ca8e0bfbc34abea0e6763f05a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTransform: {fileID: 266226124}
+  zoomInSize: 4.5
+  zoomOutSize: 6
+  zoomSpeed: 3
+  playerRb: {fileID: 266226126}
+  movementThreshold: 0.1
+--- !u!4 &266226124 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1357488544564133973, guid: 304d72ef5351f2a47913bf225a7cc44a, type: 3}
+  m_PrefabInstance: {fileID: 30749477140768531}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &266226126 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4517753968053673347, guid: 304d72ef5351f2a47913bf225a7cc44a, type: 3}
+  m_PrefabInstance: {fileID: 30749477140768531}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &635951156
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +885,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1357488544564133973, guid: 304d72ef5351f2a47913bf225a7cc44a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357488544564133973, guid: 304d72ef5351f2a47913bf225a7cc44a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1357488544564133973, guid: 304d72ef5351f2a47913bf225a7cc44a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
