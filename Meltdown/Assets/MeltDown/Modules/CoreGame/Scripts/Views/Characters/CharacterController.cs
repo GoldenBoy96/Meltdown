@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MeltDown
@@ -20,15 +18,14 @@ namespace MeltDown
         [Header("Runtime Data")]
         private Character _character;
         private GameViewController _gameViewController;
-
         private Vector2 _moveInput;
+        private bool _isFacingRight = true;
 
         void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
             _character = _characterSO.Data;
 
-            // Khởi tạo weapon controller
             _weaponController.Init(_gameViewController);
         }
 
@@ -52,19 +49,21 @@ namespace MeltDown
 
         private void FlipCharacter()
         {
-            if (_moveInput.x > 0.1f)
+            if (_moveInput.x > 0.1f && !_isFacingRight)
             {
+                _isFacingRight = true;
                 _characterVisual.localScale = new Vector3(1, 1, 1);
             }
-            else if (_moveInput.x < -0.1f)
+            else if (_moveInput.x < -0.1f && _isFacingRight)
             {
+                _isFacingRight = false;
                 _characterVisual.localScale = new Vector3(-1, 1, 1);
             }
         }
 
         private void ControlWeapon()
         {
-            _weaponController.HandleWeapon(_moveInput);
+            _weaponController.HandleWeapon(_moveInput, _isFacingRight);
         }
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MeltDown
@@ -13,7 +11,7 @@ namespace MeltDown
         [SerializeField] protected Weapon _weapon;
 
         [Header("Weapon Settings")]
-        [SerializeField] private float _weaponDistance = 0.5f; // Khoảng cách từ nhân vật
+        [SerializeField] private float _weaponDistance = 0.5f;
         [SerializeField] private Transform _weaponTransform;
 
         private GameViewController _gameViewController;
@@ -24,16 +22,22 @@ namespace MeltDown
             _gameViewController = gameViewController;
         }
 
-        public void HandleWeapon(Vector2 moveInput)
+        public void HandleWeapon(Vector2 moveInput, bool isFacingRight)
         {
             if (moveInput.magnitude > 0.1f)
             {
-                // Xác định vị trí của vũ khí theo hướng joystick
-                Vector2 offset = moveInput.normalized * _weaponDistance;
-                _weaponTransform.localPosition = offset;
+                Vector2 direction = moveInput.normalized;
 
-                // Xoay vũ khí theo hướng joystick
-                float angle = Mathf.Atan2(moveInput.y, moveInput.x) * Mathf.Rad2Deg;
+                // Flip theo hướng nhìn của nhân vật
+                if (!isFacingRight)
+                {
+                    direction.x *= -1;
+                }
+
+                Vector2 offset = direction * _weaponDistance;
+                _weaponTransform.rotation = Quaternion.Euler(0f, 0f, 0f);
+
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 _weaponTransform.rotation = Quaternion.Euler(0f, 0f, angle);
             }
         }
