@@ -9,12 +9,17 @@ namespace MeltDown
 
         [Header("Components")]
         [SerializeField] private Rigidbody2D _rb;
+        [SerializeField] private Transform _weaponTransform;
+        [SerializeField] private Transform _weapon;
         [SerializeField] private Transform _characterVisual;
         [SerializeField] private Transform _icecreamHolder;
         [SerializeField] private Joystick _joystick;
 
         [Header("Weapon Controller")]
         [SerializeField] private WeaponController _weaponController;
+
+        [Header("Weapon Parameters")]
+        [SerializeField] private float _weaponDistance = 0.1f;
 
         [Header("Runtime Data")]
         [SerializeField] Character _character;
@@ -55,34 +60,49 @@ namespace MeltDown
         void Update()
         {
             HandleMovement();
+            HandleWeaponMovement();
             FlipCharacter();
-            ControlWeapon();
         }
 
+        // Xử lý di chuyển nhân vật
         private void HandleMovement()
         {
             _moveInput = new Vector2(_joystick.Horizontal, _joystick.Vertical);
             _rb.velocity = _moveInput * _character.Spe;
         }
 
-        private void FlipCharacter()
+        private void HandleWeaponMovement()
         {
-            if (_moveInput.x > 0.1f && !_isFacingRight)
+            if (_moveInput.magnitude > 0.1f)
             {
-                _isFacingRight = true;
-                _characterVisual.localScale = new Vector3(1, 1, 1);
-            }
-            else if (_moveInput.x < -0.1f && _isFacingRight)
-            {
-                _isFacingRight = false;
-                _characterVisual.localScale = new Vector3(-1, 1, 1);
+                // Tính toán vị trí của vũ khí dựa vào hướng joystick
+                Vector2 weaponOffset = _moveInput.normalized * _weaponDistance;
+                _weaponTransform.localPosition = weaponOffset;
+
+                // Xoay vũ khí về hướng của joystick
+                float angle = Mathf.Atan2(weaponOffset.y, weaponOffset.x) * Mathf.Rad2Deg;
+                _weaponTransform.rotation = Quaternion.Euler(0f, 0f, angle);
             }
         }
 
-        private void ControlWeapon()
+        private void FlipCharacter()
         {
-            _weaponController.HandleWeapon(_moveInput, _isFacingRight);
+            if (_moveInput.x > 0.1f)
+            {
+                // Flip sang phải
+                _characterVisual.localScale = new Vector3(1, 1, 1);
+                _weapon.localScale = new Vector3(0.3f, 0.3f, 1);
+            }
+            else if (_moveInput.x < -0.1f)
+            {
+                // Flip sang trái
+                _characterVisual.localScale = new Vector3(-1, 1, 1);
+                _weapon.localScale = new Vector3(-0.3f, 0.3f, 1);
+            }
         }
+
+
+
 
         public void PickUpIcecream(IcecreamController icecream)
         {
