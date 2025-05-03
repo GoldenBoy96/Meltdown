@@ -271,6 +271,10 @@ MonoBehaviour:
     _spe: 0
     _maxDectetionRange: 0
     _minDectetionRange: 0
+    _attackRange: 0
+    _attackPower: 0
+    _attackCooldown: 0
+  _isAttackable: 1
   _detectionArea: {fileID: 500818400}
   _chasingIcecream: {fileID: 0}
 --- !u!212 &500818398
@@ -516,9 +520,9 @@ GameObject:
   m_Component:
   - component: {fileID: 982359467}
   - component: {fileID: 982359466}
+  - component: {fileID: 982359463}
   - component: {fileID: 982359465}
   - component: {fileID: 982359464}
-  - component: {fileID: 982359463}
   m_Layer: 0
   m_Name: DemoIcecream
   m_TagString: Untagged
