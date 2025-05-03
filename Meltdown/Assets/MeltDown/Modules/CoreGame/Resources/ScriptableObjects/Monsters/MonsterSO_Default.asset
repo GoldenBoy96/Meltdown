@@ -21,7 +21,7 @@ MonoBehaviour:
     _def: 50
     _spe: 4.5
     _maxDectetionRange: 10
-    _minDectetionRange: 1
-    _attackRange: 2
+    _minDectetionRange: 0.45
+    _attackRange: 0.5
     _attackPower: 50
     _attackCooldown: 1
