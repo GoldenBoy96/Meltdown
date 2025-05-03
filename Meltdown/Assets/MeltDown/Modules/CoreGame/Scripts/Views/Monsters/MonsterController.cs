@@ -16,6 +16,8 @@ namespace MeltDown
         [Header("Runtime Data")]
         [SerializeField] protected Monster _monster;
         [SerializeField] protected bool _isAttackable = true;
+        [SerializeField] protected MonsterCampController _monsterCamp;
+        [SerializeField] protected bool _isReturnToCamp = false;
 
         protected GameViewController _gameViewController;
 
@@ -30,6 +32,18 @@ namespace MeltDown
             _gameViewController = gameViewController;
         }
 
+        public void RegisterCamp(MonsterCampController monsterCamp)
+        {
+            _monsterCamp = monsterCamp;
+            if (Vector3.Distance(transform.position, _monsterCamp.transform.position) > _monsterCamp.MonsterCamp.Range)
+            {
+                // Direction from camp to monster
+                Vector3 direction = (transform.position - _monsterCamp.transform.position).normalized;
+
+                // New position exactly Range units from the camp
+                transform.position = _monsterCamp.transform.position + direction * _monsterCamp.MonsterCamp.Range;
+            }
+        }
         public virtual void TryAttack()
         {
         }
