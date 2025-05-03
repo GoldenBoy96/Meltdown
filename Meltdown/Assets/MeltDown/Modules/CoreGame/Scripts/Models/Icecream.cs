@@ -16,6 +16,7 @@ namespace MeltDown
         [SerializeField] float _hp;
         [SerializeField] float _def;
         [SerializeField] float _meltDownPerSecond;
+        [SerializeField] float _pickUpTime;
 
         public Guid Id
         {
@@ -32,6 +33,7 @@ namespace MeltDown
         public float Hp { get => _hp; set => _hp = value; }
         public float Def { get => _def; set => _def = value; }
         public float MeltDownPerSecond { get => _meltDownPerSecond; set => _meltDownPerSecond = value; }
+        public float PickUpTime { get => _pickUpTime; set => _pickUpTime = value; }
 
         public override bool Equals(object obj)
         {

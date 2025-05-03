@@ -19,3 +19,4 @@ MonoBehaviour:
     _hp: 500
     _def: 50
     _meltDownPerSecond: 1
+    _pickUpTime: 3

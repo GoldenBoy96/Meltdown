@@ -12,14 +12,17 @@ namespace MeltDown
         [Header("Components")]
         [SerializeField] private Rigidbody2D _rb;
         [SerializeField] private Transform _characterVisual;
+        [SerializeField] private Transform _icecreamHolder;
         [SerializeField] private Joystick _joystick;
 
         [Header("Weapon Controller")]
         [SerializeField] private WeaponController _weaponController;
 
         [Header("Runtime Data")]
-        private Character _character;
-        private GameViewController _gameViewController;
+        [SerializeField] Character _character;
+        [SerializeField] GameViewController _gameViewController;
+        [SerializeField] IcecreamController _icecream;
+
 
         private Vector2 _moveInput;
 
@@ -28,13 +31,26 @@ namespace MeltDown
             _rb = GetComponent<Rigidbody2D>();
             _character = _characterSO.Data;
 
-            // Khởi tạo weapon controller
-            _weaponController.Init(_gameViewController);
+            if (_icecream == null) _icecream = _icecreamHolder.GetComponentInChildren<IcecreamController>();
+            if (_icecream != null)
+            {
+                _icecream.transform.localPosition = Vector3.zero;
+                _icecream.Init(this, _gameViewController);
+            }
         }
 
         public void Init(GameViewController gameViewController)
         {
             _gameViewController = gameViewController;
+
+            // Khởi tạo weapon controller
+            _weaponController.Init(_gameViewController);
+            if (_icecream == null) _icecream = _icecreamHolder.GetComponentInChildren<IcecreamController>();
+            if (_icecream != null)
+            {
+                _icecream.transform.localPosition = Vector3.zero;
+                _icecream.Init(this, _gameViewController);
+            }
         }
 
         void Update()
@@ -65,6 +81,22 @@ namespace MeltDown
         private void ControlWeapon()
         {
             _weaponController.HandleWeapon(_moveInput);
+        }
+
+        public void PickUpIcecream(IcecreamController icecream)
+        {
+            _icecream = icecream;
+            _icecream.transform.SetParent(_icecreamHolder);
+            _icecream.transform.localPosition = Vector3.zero;
+            _icecream.PickUp(this);
+        }
+
+        [ContextMenu("DropIcecream")]
+        public void DropIcecream()
+        {
+            _icecream.transform.parent = transform.parent;
+            _icecream.DropDown();
+            _icecream = null;
         }
     }
 }
