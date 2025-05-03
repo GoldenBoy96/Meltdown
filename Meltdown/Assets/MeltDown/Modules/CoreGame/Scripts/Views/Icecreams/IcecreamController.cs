@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MeltDown
 {
-    public class IcecreamController : MonoBehaviour
+    public class IcecreamController : MonoBehaviour, IGetDamageable
     {
         [Header("Init Data")]
         [SerializeField] IcecreamSO _icecreamSO;
@@ -13,10 +13,22 @@ namespace MeltDown
         [SerializeField] Icecream _icecream;
 
         private GameViewController _gameViewController;
-        public void Init(GameViewController gameViewController)
+
+        private void OnEnable()
         {
             _icecream = _icecreamSO.Data;
+        }
+        public void Init(GameViewController gameViewController)
+        {
             _gameViewController = gameViewController;
         }
+
+        public void GetDamage(float atk, float power)
+        {
+            _icecream.Hp -= IGetDamageable.CalculateTrueDamage(atk, power, _icecream.Def);
+            if (_icecream.Hp < 0) _icecream.Hp = 0;
+            if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
+        }
+
     }
 }
