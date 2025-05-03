@@ -25,6 +25,7 @@ namespace MeltDown
 
         public void GetDamage(float atk, float power)
         {
+            Debug.Log(IGetDamageable.CalculateTrueDamage(atk, power, _icecream.Def));
             _icecream.Hp -= IGetDamageable.CalculateTrueDamage(atk, power, _icecream.Def);
             if (_icecream.Hp < 0) _icecream.Hp = 0;
             if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;

@@ -21,6 +21,7 @@ namespace MeltDown
         [SerializeField] float _minDectetionRange;
         [SerializeField] float _attackRange;
         [SerializeField] float _attackPower; //TODO: Move this to MonsterSkillSO
+        [SerializeField] float _attackCooldown; 
 
         public Guid Id
         {
@@ -42,6 +43,7 @@ namespace MeltDown
         public float MinDectetionRange { get => _minDectetionRange; set => _minDectetionRange = value; }
         public float AttackRange { get => _attackRange; set => _attackRange = value; }
         public float AttackPower { get => _attackPower; set => _attackPower = value; }
+        public float AttackCooldown { get => _attackCooldown; set => _attackCooldown = value; }
 
         public override bool Equals(object obj)
         {

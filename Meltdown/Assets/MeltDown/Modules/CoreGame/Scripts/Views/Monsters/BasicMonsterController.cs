@@ -13,39 +13,40 @@ namespace MeltDown
         [Header("Runtime Data")]
         [SerializeField] IcecreamController _chasingIcecream;
 
-
+        private void Update()
+        {
+            ChaseIcecream();
+        }
         public void DetectIcecream(IcecreamController chasingIcecream)
         {
             _chasingIcecream = chasingIcecream;
-            ChaseIcecream();
         }
         public void ChaseIcecream()
         {
-            if (_chasingIcecream == null) return;
+            if (_chasingIcecream == null) return; 
+            if (Vector3.Distance(transform.position, _chasingIcecream.transform.position) <= _monster.AttackRange)
+            {
+                TryAttack();
+            }
+
             if (Vector3.Distance(transform.position, _chasingIcecream.transform.position) <= _monster.MinDectetionRange) return;
             Vector2 newPosition = Vector2.MoveTowards(_rb.position, _chasingIcecream.transform.position, _monster.Spe * Time.fixedDeltaTime);
             _rb.MovePosition(newPosition);
-
-            Debug.Log(Vector3.Distance(transform.position, _chasingIcecream.transform.position) + " | " + _monster.AttackRange);
-            if (Vector3.Distance(transform.position, _chasingIcecream.transform.position) <= _monster.AttackRange)
-            {
-                Attack();
-            }
         }
 
-        public void Attack()
+        public override void TryAttack()
         {
-            if (_chasingIcecream != null && Vector3.Distance(transform.position, _chasingIcecream.transform.position) <= _monster.AttackRange)
+            if (_chasingIcecream != null && Vector3.Distance(transform.position, _chasingIcecream.transform.position) <= _monster.AttackRange && IsAttackable)
             {
                 _chasingIcecream.GetDamage(_monster.Atk, _monster.AttackPower);
+                CooldownAttack();
             }
         }
 
-        public void OnTriggerStay2D(Collider2D collision)
+        public void OnTriggerEnter2D(Collider2D collision)
         {
             Debug.Log("OnTriggerEnter2D");
             collision.TryGetComponent<IcecreamController>(out var icecream);
-            Debug.Log(icecream);
             if (icecream != null)
             {
                 DetectIcecream(icecream);
@@ -54,6 +55,7 @@ namespace MeltDown
 
         public void OnTriggerExit2D(Collider2D collision)
         {
+            Debug.Log("OnTriggerEnter2D");
             collision.TryGetComponent<IcecreamController>(out var icecream);
             if (icecream != null)
             {

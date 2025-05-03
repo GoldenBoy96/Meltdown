@@ -15,8 +15,11 @@ namespace MeltDown
 
         [Header("Runtime Data")]
         [SerializeField] protected Monster _monster;
+        [SerializeField] protected bool _isAttackable = true;
 
         protected GameViewController _gameViewController;
+
+        public bool IsAttackable { get => _isAttackable; private set => _isAttackable = value; }
 
         private void Start()
         {
@@ -27,5 +30,19 @@ namespace MeltDown
             _gameViewController = gameViewController;
         }
 
+        public virtual void TryAttack()
+        {
+        }
+
+        public virtual void CooldownAttack()
+        {
+            StartCoroutine(CooldownAttackCoroutine());
+        }
+        protected IEnumerator CooldownAttackCoroutine()
+        {
+            _isAttackable = false;
+            yield return new WaitForSeconds(_monster.AttackCooldown);
+            _isAttackable = true;
+        }
     }
 }
