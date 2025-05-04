@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _settingsPanel;
     [SerializeField] private GameObject _mainStagesPanel;
     [SerializeField] private GameObject _mainMenuPanel;
-    [SerializeField] private GameObject[] _levelPrefabs;//
+    [SerializeField] private GameObject[] _levelPrefabs;
     [SerializeField] private Transform _levelParent;
 
     [Header("Level Buttons UI")]
@@ -88,19 +88,17 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // Khi người chơi hoàn thành level
     public void CompleteCurrentLevel()
     {
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1); // Lấy level hiện tại đã mở
 
-        // Kiểm tra và mở khóa level tiếp theo nếu cần
-        if (currentLevelIndex + 1 > unlockedLevel)
-        {
-            PlayerPrefs.SetInt("UnlockedLevel", currentLevelIndex + 1); // Mở khóa level tiếp theo
-            PlayerPrefs.Save(); // Lưu lại thay đổi
-        }
+        // Mở khóa tất cả các level
+        PlayerPrefs.SetInt("UnlockedLevel", levelButtons.Length); // Cập nhật để mở tất cả các level
+        PlayerPrefs.Save(); // Lưu lại thay đổi
 
         // Cập nhật lại giao diện nút level
         UpdateLevelButtons();
     }
+
+
 }
