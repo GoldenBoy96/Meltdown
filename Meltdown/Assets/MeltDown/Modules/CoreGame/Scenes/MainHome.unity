@@ -521,6 +521,7 @@ MonoBehaviour:
   _mainMenuPanel: {fileID: 6208491633077617907}
   _levelPrefabs:
   - {fileID: 4644098933249770999, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
+  - {fileID: 3456179784763848063, guid: 4872a3a712eaf5b4fae657e78f9c154b, type: 3}
   - {fileID: 6169573740450701113, guid: 2976c46274f94e543a61930958025df3, type: 3}
   - {fileID: 9008625738428754472, guid: 5eb9855bd73b9e1499fa29edf824a3f6, type: 3}
   - {fileID: 23498121257171469, guid: 359dae164144caa4bacb26b0df83737d, type: 3}

@@ -10,21 +10,22 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform _levelParent;
 
     [Header("Level Buttons UI")]
-    [SerializeField] private Button[] levelButtons; // Các button trong màn chọn level
+    [SerializeField] private Button[] levelButtons;
     [SerializeField] private Sprite buttonLockSprite;
     [SerializeField] private Sprite withStartBtnSprite;
 
     private GameObject currentLevel;
+    private int currentLevelIndex;
 
     void Start()
     {
         UpdateLevelButtons();
+
     }
 
-    // Cập nhật hình ảnh nút theo trạng thái mở/khóa
     private void UpdateLevelButtons()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1); // Mặc định mở level 1
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
@@ -65,6 +66,7 @@ public class UIManager : MonoBehaviour
     {
         _mainStagesPanel.SetActive(false);
         _mainMenuPanel.SetActive(false);
+        currentLevelIndex = levelIndex;
 
         if (currentLevel != null)
         {
@@ -81,16 +83,21 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // Gọi khi hoàn thành level hiện tại
-    public void CompleteCurrentLevel(int levelIndex)
+    public void CompleteCurrentLevel()
     {
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
-        if (levelIndex + 1 > unlockedLevel)
+
+        Debug.Log("Level hiện tại: " + currentLevelIndex + " | UnlockedLevel cũ: " + unlockedLevel);
+
+        if (currentLevelIndex + 1 > unlockedLevel)
         {
-            PlayerPrefs.SetInt("UnlockedLevel", levelIndex + 1); // Mở khóa level tiếp theo
+            PlayerPrefs.SetInt("UnlockedLevel", currentLevelIndex + 1);
             PlayerPrefs.Save();
+            Debug.Log("Đã lưu UnlockedLevel mới: " + (currentLevelIndex + 1));
         }
 
-        UpdateLevelButtons(); // Cập nhật giao diện button
+        UpdateLevelButtons();
     }
+
+
 }
