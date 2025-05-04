@@ -16,6 +16,7 @@ namespace MeltDown
         [SerializeField] protected Rigidbody2D _rb;
         [SerializeField] protected AlertIconController _alertIcon;
         [SerializeField] protected RectTransform _alert;
+        [SerializeField] HealthBarController _healthBar;
 
         [Header("Runtime Data")]
         [SerializeField] protected Monster _monster;
@@ -37,6 +38,11 @@ namespace MeltDown
             _gameViewController = gameViewController;
             _alert = Instantiate(_gameViewController.AlertIconPrefab, _gameViewController.AlertRect.transform);
             _alert.GetComponent<AlertIconController>().Init(transform, _gameViewController.AlertRect, _alert);
+        }
+
+        public void Update()
+        {
+            _healthBar.UpdateHpBar(_monster.Hp, _monster.MaxHp);
         }
 
         public virtual void FixedUpdate()

@@ -12,6 +12,9 @@ namespace MeltDown
         [Header("Init Data")]
         [SerializeField] IcecreamSO _icecreamSO;
 
+        [Header("Child Component")]
+        [SerializeField] HealthBarController _healthBar;
+
         [Header("Runtime Data")]
         [SerializeField] Icecream _icecream;
         [SerializeField] bool _isPickingUp = false;
@@ -63,6 +66,7 @@ namespace MeltDown
         private void Update()
         {
             CheckPickUp();
+            _healthBar.UpdateHpBar(_icecream.Hp, _icecream.MaxHp);
         }
 
         public void CheckPickUp()
