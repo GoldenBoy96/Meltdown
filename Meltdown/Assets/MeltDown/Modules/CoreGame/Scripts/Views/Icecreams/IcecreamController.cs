@@ -14,6 +14,7 @@ namespace MeltDown
 
         [Header("Child Component")]
         [SerializeField] HealthBarController _healthBar;
+        [SerializeField] HealthBarController _pickUpCircle;
 
         [Header("Runtime Data")]
         [SerializeField] Icecream _icecream;
@@ -72,6 +73,7 @@ namespace MeltDown
         public void CheckPickUp()
         {
             if (!_enablePickUp) return;
+            _pickUpCircle.gameObject.SetActive(true);
             if (_isPickingUp)
             {
                 _currentPickUpTime += Time.deltaTime;
@@ -79,6 +81,7 @@ namespace MeltDown
                 {
                     _currentPickUpTime = 0;
                     _pickUpCharacter.PickUpIcecream(this);
+                    _pickUpCircle.gameObject.SetActive(false);
                 }
             }
             else
@@ -86,6 +89,7 @@ namespace MeltDown
                 _currentPickUpTime -= Time.deltaTime;
                 if (_currentPickUpTime < 0) _currentPickUpTime = 0;
             }
+            _pickUpCircle.UpdateHpBar(_currentPickUpTime, _icecream.PickUpTime);
         }
 
         public void PickUp(CharacterController holderCharacter)
