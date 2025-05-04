@@ -10,9 +10,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform _levelParent;
 
     [Header("Level Buttons UI")]
-    [SerializeField] private Button[] _levelButtons;
-    [SerializeField] private Sprite _buttonLockSprite;
-    [SerializeField] private Sprite _withStartBtnSprite;
+    [SerializeField] private Button[] levelButtons; // Các button trong màn chọn level
+    [SerializeField] private Sprite buttonLockSprite;
+    [SerializeField] private Sprite withStartBtnSprite;
 
     private GameObject currentLevel;
 
@@ -24,19 +24,19 @@ public class UIManager : MonoBehaviour
     // Cập nhật hình ảnh nút theo trạng thái mở/khóa
     private void UpdateLevelButtons()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1); // Mặc định mở level 1
 
-        for (int i = 0; i < _levelButtons.Length; i++)
+        for (int i = 0; i < levelButtons.Length; i++)
         {
             if (i < unlockedLevel)
             {
-                _levelButtons[i].interactable = true;
-                _levelButtons[i].image.sprite = _withStartBtnSprite;
+                levelButtons[i].interactable = true;
+                levelButtons[i].image.sprite = withStartBtnSprite;
             }
             else
             {
-                _levelButtons[i].interactable = false;
-                _levelButtons[i].image.sprite = _buttonLockSprite;
+                levelButtons[i].interactable = false;
+                levelButtons[i].image.sprite = buttonLockSprite;
             }
         }
     }
