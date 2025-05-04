@@ -34,6 +34,7 @@ public class EndPointController : MonoBehaviour
             Debug.Log("Win Game");
             Time.timeScale = 0f;
 
+
             if (_winGamePanel != null)
                 _winGamePanel.SetActive(true);
 
