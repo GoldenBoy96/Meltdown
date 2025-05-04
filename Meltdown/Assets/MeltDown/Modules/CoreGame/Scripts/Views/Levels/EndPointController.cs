@@ -6,8 +6,11 @@ using CharacterController = MeltDown.CharacterController;
 
 public class EndPointController : MonoBehaviour
 {
+
     [Header("Prefab")]
     [SerializeField] AlertIconController _alertIconPrefab;
+
+    [SerializeField] private GameObject _winGamePanel;
 
     private void Start()
     {
@@ -20,7 +23,12 @@ public class EndPointController : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         var player = collision.gameObject.GetComponent<CharacterController>();
-        if (collision.name == "Player") Debug.Log("Win Game");
+        if (collision.name == "Player")
+        {
+            _winGamePanel.SetActive(true);
+            Time.timeScale = 0f;
+            Debug.Log("Win Game");
+        }
         //if (player != null)
         //{
         //    Debug.Log("End Game");
