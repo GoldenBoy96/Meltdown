@@ -24,6 +24,9 @@ namespace MeltDown
         [SerializeField] float _currentPickUpTime;
         [SerializeField] bool _isMeltDown = true;
 
+        [Header("Ui Lose")]
+        [SerializeField] GameObject _loseGamePanel;
+
         private GameViewController _gameViewController;
         private CharacterController _holderCharacter;
         private CharacterController _pickUpCharacter;
@@ -59,11 +62,12 @@ namespace MeltDown
                 else
                 {
                     _icecream.Hp -= IGetDamageable.CalculateTrueDamage(atk, power, _icecream.Def);
-                    if (_icecream.Hp < 0)
+                    if (_icecream.Hp <= 0)
                     {
                         _icecream.Hp = 0;
                         Debug.Log("Lose Game");
 
+                         _loseGamePanel.SetActive(true);
                         AudioManager.Instance.PlaySound("lose");
                         AudioManager.Instance.StopMusic();
                         _isLose = true;
