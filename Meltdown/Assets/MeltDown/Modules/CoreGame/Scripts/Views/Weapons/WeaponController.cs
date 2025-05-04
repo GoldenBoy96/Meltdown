@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using Template;
 using UnityEngine;
 
 namespace MeltDown
@@ -45,6 +46,8 @@ namespace MeltDown
                     monster.GetDamage(_characterController.Character.Atk, _weapon.Power);
                     KnockBackHelper.Knockback(GameViewController.Instance.Player.transform, monster.GetComponent<Rigidbody2D>(), _weapon.KnockBackForce);
                 }
+
+                AudioManager.Instance.PlaySound("player_attack");
                 CooldownAttack();
                 StartCoroutine(AttackEffectCoroutine());
             }

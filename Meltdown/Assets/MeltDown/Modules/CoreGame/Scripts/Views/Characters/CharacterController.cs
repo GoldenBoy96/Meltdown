@@ -1,3 +1,4 @@
+using Template;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Template;
 using UnityEngine;
 
 namespace MeltDown
@@ -29,6 +30,7 @@ namespace MeltDown
         private GameViewController _gameViewController;
         private CharacterController _holderCharacter;
         private CharacterController _pickUpCharacter;
+        bool _isLose = false;
 
         public CharacterController HolderCharacter { get => _holderCharacter; private set => _holderCharacter = value; }
 
@@ -50,21 +52,29 @@ namespace MeltDown
 
         public void GetDamage(float atk, float power)
         {
-            if (_holderCharacter != null)
+            if (!_isLose)
             {
-                _holderCharacter.DropIcecream();
-                _holderCharacter = null;
-            }
-            else
-            {
-                _icecream.Hp -= IGetDamageable.CalculateTrueDamage(atk, power, _icecream.Def);
-                if (_icecream.Hp < 0)
+                if (_holderCharacter != null)
                 {
-                    _icecream.Hp = 0;
-                    _loseGamePanel.SetActive(true);
-                    Debug.Log("Lose Game");
+                    _holderCharacter.DropIcecream();
+                    _holderCharacter = null;
                 }
-                if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
+                else
+                {
+                    _icecream.Hp -= IGetDamageable.CalculateTrueDamage(atk, power, _icecream.Def);
+                    if (_icecream.Hp <= 0)
+                    {
+                        _icecream.Hp = 0;
+                        Debug.Log("Lose Game");
+
+                         _loseGamePanel.SetActive(true);
+                        AudioManager.Instance.PlaySound("lose");
+                        AudioManager.Instance.StopMusic();
+                        _isLose = true;
+                    }
+
+                    if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
+                }
             }
         }
 
