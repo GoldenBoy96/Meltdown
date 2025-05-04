@@ -14,8 +14,6 @@ public class EndPointController : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(_alertIconPrefab.gameObject);
-        Debug.Log(GameViewController.Instance.AlertRect);
         var alert = Instantiate(_alertIconPrefab.gameObject, GameViewController.Instance.AlertRect.transform);
         alert.GetComponent<AlertIconController>().Init(transform, GameViewController.Instance.AlertRect, alert.GetComponent<RectTransform>());
     }

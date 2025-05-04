@@ -99,6 +99,16 @@ namespace MeltDown
             _enablePickUp = true;
         }
 
+        public void Heal(float hpToHeal)
+        {
+            _icecream.Hp += hpToHeal;
+            if (_icecream.Hp < 0)
+            {
+                _icecream.Hp = 0;
+            }
+            if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
+        }
+
         IEnumerator MeltDownCoroutine()
         {
             yield return new WaitForSeconds(0.1f);

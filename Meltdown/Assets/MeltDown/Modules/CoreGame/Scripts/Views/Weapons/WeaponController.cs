@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,11 @@ namespace MeltDown
     {
         [Header("Init Data")]
         [SerializeField] WeaponSO _weaponSO;
+
+
+        [Header("ChildComponent")]
+        [SerializeField] SpriteRenderer _sprite;
+        [SerializeField] GameObject _slashEffect;
 
         [Header("Runtime Data")]
         [SerializeField] Weapon _weapon;
@@ -40,6 +46,7 @@ namespace MeltDown
                     KnockBackHelper.Knockback(GameViewController.Instance.Player.transform, monster.GetComponent<Rigidbody2D>(), _weapon.KnockBackForce);
                 }
                 CooldownAttack();
+                StartCoroutine(AttackEffectCoroutine());
             }
         }
 
@@ -55,6 +62,18 @@ namespace MeltDown
             _isAttackable = true;
         }
 
+        IEnumerator AttackEffectCoroutine()
+        {
+            var originRotation = _sprite.transform.localRotation;
+            var originScale = _sprite.transform.localScale;
+            _slashEffect.SetActive(true);
+            _sprite.transform.DOLocalRotate(originRotation.eulerAngles + new Vector3(0, 0, 60), 0.2f);
+            _sprite.transform.DOScale(originScale* 1.5f, 0.2f);
+            yield return new WaitForSeconds(0.2f);
+            _sprite.transform.DOLocalRotate(originRotation.eulerAngles + new Vector3(0, 0, 0), 0.1f);
+            _sprite.transform.DOScale(originScale, 0.1f);
+            _slashEffect.SetActive(false);
+        }
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Monster"))
