@@ -6,7 +6,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _settingsPanel;
     [SerializeField] private GameObject _mainStagesPanel;
     [SerializeField] private GameObject _mainMenuPanel;
-    [SerializeField] private GameObject[] _levelPrefabs;
+    [SerializeField] private GameObject[] _levelPrefabs;//
     [SerializeField] private Transform _levelParent;
 
     [Header("Level Buttons UI")]
