@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Template;
 using UnityEngine;
 
 namespace MeltDown
@@ -19,6 +20,7 @@ namespace MeltDown
         {
             //base.Update();
             ChasePlayer();
+            ReturnToCamp();
         }
         public override void ChaseIcecream()
         {
@@ -68,6 +70,7 @@ namespace MeltDown
                 {
                     _player.Icecream.GetDamage(_monster.Atk, _monster.AttackPower);
                     CooldownAttack();
+                    AudioManager.Instance.PlaySound("monster_attack");
                 }
             } else
             {
@@ -75,6 +78,7 @@ namespace MeltDown
                 {
                     KnockBackHelper.Knockback(transform, _player.GetComponent<Rigidbody2D>(), 5);
                     CooldownAttack();
+                    AudioManager.Instance.PlaySound("monster_attack");
                 }
             }
         }

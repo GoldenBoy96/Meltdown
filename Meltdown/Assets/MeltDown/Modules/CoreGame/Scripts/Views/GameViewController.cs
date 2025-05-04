@@ -1,5 +1,6 @@
 using OurUtils;
 using System.Collections.Generic;
+using Template;
 using UnityEngine;
 
 namespace MeltDown
@@ -32,6 +33,12 @@ namespace MeltDown
         private void Start()
         {
             _mainCam = Camera.main;
+            AudioManager.Instance.PlayMusic("bg_music");
+        }
+
+        private void OnDisable()
+        {
+            AudioManager.Instance.StopMusic();
         }
     }
 }

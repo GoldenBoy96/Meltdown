@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Template;
 using TMPro;
 using UnityEngine;
 
@@ -58,6 +59,7 @@ namespace MeltDown
             {
                 _chasingIcecream.GetDamage(_monster.Atk, _monster.AttackPower);
                 CooldownAttack();
+                AudioManager.Instance.PlaySound("monster_attack");
             }
         }
 

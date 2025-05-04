@@ -112,7 +112,7 @@ namespace Template
 
         public void StopMusic()
         {
-            _musicAudioSource.Stop();
+            if (_musicAudioSource != null) _musicAudioSource.Stop();
         }
 
         private void SetPlayingSoundVolume()
