@@ -26,8 +26,6 @@ namespace MeltDown
         private CharacterController _holderCharacter;
         private CharacterController _pickUpCharacter;
 
-        [SerializeField] private GameObject _loseGamePanel;
-
         public CharacterController HolderCharacter { get => _holderCharacter; private set => _holderCharacter = value; }
 
         private void OnEnable()
@@ -120,8 +118,6 @@ namespace MeltDown
                 if (_icecream.Hp < 0)
                 {
                     _icecream.Hp = 0;
-                    _loseGamePanel.SetActive(true);
-                    Time.timeScale = 0f;
                     Debug.Log("Lose Game");
                 }
                 if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
