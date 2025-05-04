@@ -23,6 +23,9 @@ namespace MeltDown
         [SerializeField] float _currentPickUpTime;
         [SerializeField] bool _isMeltDown = true;
 
+        [Header("Ui Lose")]
+        [SerializeField] GameObject _loseGamePanel;
+
         private GameViewController _gameViewController;
         private CharacterController _holderCharacter;
         private CharacterController _pickUpCharacter;
@@ -58,6 +61,7 @@ namespace MeltDown
                 if (_icecream.Hp < 0)
                 {
                     _icecream.Hp = 0;
+                    _loseGamePanel.SetActive(true);
                     Debug.Log("Lose Game");
                 }
                 if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;

@@ -10478,6 +10478,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponSO: {fileID: 11400000, guid: fedfc9fd2b86e2344a5da4d8f8b9d879, type: 2}
+  _sprite: {fileID: 0}
+  _slashEffect: {fileID: 0}
   _weapon:
     _weaponName: 
     _description: 
@@ -10651,6 +10653,7 @@ MonoBehaviour:
   _enablePickUp: 0
   _currentPickUpTime: 0
   _isMeltDown: 1
+  _loseGamePanel: {fileID: 7116517346587376788}
 --- !u!61 &7306110155962174336
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -88789,6 +88789,10 @@ PrefabInstance:
       propertyPath: m_LinearDrag
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 4732842740245586563, guid: 304d72ef5351f2a47913bf225a7cc44a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6419677660231369909, guid: 304d72ef5351f2a47913bf225a7cc44a, type: 3}
       propertyPath: _weaponController
       value: 
