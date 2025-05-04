@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace MeltDown
 {
@@ -72,8 +73,9 @@ namespace MeltDown
         // Xử lý di chuyển nhân vật
         private void HandleMovement()
         {
-            _moveInput = new Vector2(_joystick.Horizontal, _joystick.Vertical);
-            _rb.velocity = _moveInput * Character.Spe;
+            _rb.totalForce = Vector3.zero;
+            _moveInput = new Vector2(_joystick.Horizontal, _joystick.Vertical).normalized;
+            _rb.AddForce(_moveInput * Character.Spe / 100, ForceMode2D.Impulse);
         }
 
         private void HandleWeaponMovement()

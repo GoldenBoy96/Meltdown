@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 namespace MeltDown
@@ -66,6 +67,13 @@ namespace MeltDown
                 if (Vector3.Distance(transform.position, _player.transform.position) <= _monster.AttackRange && IsAttackable)
                 {
                     _player.Icecream.GetDamage(_monster.Atk, _monster.AttackPower);
+                    CooldownAttack();
+                }
+            } else
+            {
+                if (Vector3.Distance(transform.position, _player.transform.position) <= _monster.AttackRange && IsAttackable)
+                {
+                    KnockBackHelper.Knockback(transform, _player.GetComponent<Rigidbody2D>(), 5);
                     CooldownAttack();
                 }
             }
