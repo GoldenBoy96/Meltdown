@@ -23,6 +23,8 @@ namespace MeltDown
         private CharacterController _holderCharacter;
         private CharacterController _pickUpCharacter;
 
+        public CharacterController HolderCharacter { get => _holderCharacter; private set => _holderCharacter = value; }
+
         private void OnEnable()
         {
             _icecream = _icecreamSO.Data;

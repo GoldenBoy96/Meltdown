@@ -11,14 +11,14 @@ namespace MeltDown
         [SerializeField] Collider2D _detectionArea;
 
         [Header("Runtime Data")]
-        [SerializeField] IcecreamController _chasingIcecream;
+        [SerializeField] protected IcecreamController _chasingIcecream;
 
         public override void Update()
         {
             base.Update();
             ChaseIcecream();
         }
-        public void DetectIcecream(IcecreamController chasingIcecream)
+        public virtual void DetectIcecream(IcecreamController chasingIcecream)
         {
             _chasingIcecream = chasingIcecream;
             if (_chasingIcecream != null && _monsterCamp != null)
@@ -26,7 +26,7 @@ namespace MeltDown
                 _monsterCamp.TriggerHordeAttack(chasingIcecream);
             }
         }
-        public void ChaseIcecream()
+        public virtual void ChaseIcecream()
         {
             if (_monsterCamp != null)
             {
@@ -50,9 +50,9 @@ namespace MeltDown
 
         public override void TryAttack()
         {
-            Debug.Log(_chasingIcecream + "\n"
-                + Vector3.Distance(transform.position, _chasingIcecream.transform.position) + " | " + _monster.AttackRange
-                + IsAttackable);
+            //Debug.Log(_chasingIcecream + "\n"
+            //    + Vector3.Distance(transform.position, _chasingIcecream.transform.position) + " | " + _monster.AttackRange
+            //    + IsAttackable);
             if (_chasingIcecream != null && Vector3.Distance(transform.position, _chasingIcecream.transform.position) <= _monster.AttackRange && IsAttackable)
             {
                 _chasingIcecream.GetDamage(_monster.Atk, _monster.AttackPower);

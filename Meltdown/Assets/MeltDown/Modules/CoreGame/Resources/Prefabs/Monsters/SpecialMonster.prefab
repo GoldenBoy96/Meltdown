@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 990815098139226031}
   - component: {fileID: 5551716674217969173}
-  - component: {fileID: 2992016542170465913}
   - component: {fileID: 5113020175096086183}
   - component: {fileID: 7330173102249744729}
   - component: {fileID: 5509086883141846554}
+  - component: {fileID: 4856480294958858901}
   m_Layer: 0
-  m_Name: DemoMonster
+  m_Name: SpecialMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5350738667686956519}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.67, y: 3.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6c726254a0f1ec145895d9938c610c9a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.64716977, g: 0.7056253, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -89,40 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2992016542170465913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5350738667686956519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c8d74f2d94962d4b939b601cb302cba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _monsterSO: {fileID: 11400000, guid: bb0c7368b7600784f9b943b5b74ed600, type: 2}
-  _rb: {fileID: 5113020175096086183}
-  _alertIcon: {fileID: 0}
-  _alert: {fileID: 0}
-  _monster:
-    _monsterName: 
-    _description: 
-    _maxHp: 0
-    _hp: 0
-    _atk: 0
-    _def: 0
-    _spe: 0
-    _maxDectetionRange: 0
-    _minDectetionRange: 0
-    _attackRange: 0
-    _attackPower: 0
-    _attackCooldown: 0
-  _isAttackable: 1
-  _monsterCamp: {fileID: 0}
-  _originalPosition: {x: 0, y: 0, z: 0}
-  _detectionArea: {fileID: 7330173102249744729}
-  _chasingIcecream: {fileID: 0}
 --- !u!50 &5113020175096086183
 Rigidbody2D:
   serializedVersion: 4
@@ -219,7 +185,42 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.28
+--- !u!114 &4856480294958858901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350738667686956519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ca85b1919f3b8428f2dca0aa3eab44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterSO: {fileID: 11400000, guid: ba6177822d8f1c34b85ec9d0a26a4631, type: 2}
+  _rb: {fileID: 5113020175096086183}
+  _alertIcon: {fileID: 3053408473036560424, guid: 8799ea4d41217f94a89a029ca6fc73cc, type: 3}
+  _alert: {fileID: 6194674667389760342, guid: 8799ea4d41217f94a89a029ca6fc73cc, type: 3}
+  _monster:
+    _monsterName: 
+    _description: 
+    _maxHp: 0
+    _hp: 0
+    _atk: 0
+    _def: 0
+    _spe: 0
+    _maxDectetionRange: 0
+    _minDectetionRange: 0
+    _attackRange: 0
+    _attackPower: 0
+    _attackCooldown: 0
+  _isAttackable: 1
+  _monsterCamp: {fileID: 0}
+  _originalPosition: {x: 0, y: 0, z: 0}
+  _detectionArea: {fileID: 7330173102249744729}
+  _chasingIcecream: {fileID: 0}
+  _player: {fileID: 0}
 --- !u!1 &9125193967163682007
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,4 +287,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.32
+  m_Radius: 0.28
