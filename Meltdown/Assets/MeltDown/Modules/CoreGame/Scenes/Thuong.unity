@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61400ca8e0bfbc34abea0e6763f05a3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTransform: {fileID: 616887730}
+  followTransform: {fileID: 0}
   zoomInSize: 4.5
   zoomOutSize: 6
   zoomSpeed: 3
@@ -5938,6 +5938,10 @@ PrefabInstance:
     - target: {fileID: 571955686782744975, guid: 4872a3a712eaf5b4fae657e78f9c154b, type: 3}
       propertyPath: m_Name
       value: Level_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 571955686782744975, guid: 4872a3a712eaf5b4fae657e78f9c154b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 859729752926709478, guid: 4872a3a712eaf5b4fae657e78f9c154b, type: 3}
       propertyPath: m_SortingOrder
