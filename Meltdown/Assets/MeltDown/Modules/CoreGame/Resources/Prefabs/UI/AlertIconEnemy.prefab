@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 984457352375567967}
   - component: {fileID: 3053408473036560424}
   m_Layer: 5
-  m_Name: AlertIcon
+  m_Name: AlertIconEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

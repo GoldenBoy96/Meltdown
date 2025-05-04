@@ -21,7 +21,7 @@ public class AlertIconController : MonoBehaviour
     public const float distanceLevel5 = 5;
 
     [SerializeField] float _opacity;
-    public Transform enemy;
+    public Transform target;
     public Camera mainCamera;
     public RectTransform canvasRect;
     public RectTransform indicatorUI;
@@ -32,18 +32,18 @@ public class AlertIconController : MonoBehaviour
         SetOpacity(opacityLevel0);
     }
 
-    public void Init(Transform enemy, RectTransform canvasRect, RectTransform indicatorUI)
+    public void Init(Transform target, RectTransform canvasRect, RectTransform indicatorUI)
     {
-        this.enemy = enemy;
+        this.target = target;
         mainCamera = Camera.main;
         this.canvasRect = canvasRect;
         this.indicatorUI = indicatorUI;
     }
     void Update()
     {
-        if (enemy == null || mainCamera == null || canvasRect == null || indicatorUI == null) return;
+        if (target == null || mainCamera == null || canvasRect == null || indicatorUI == null) return;
 
-        Vector3 screenPos = mainCamera.WorldToScreenPoint(enemy.position);
+        Vector3 screenPos = mainCamera.WorldToScreenPoint(target.position);
 
         bool isOffScreen = screenPos.x < 0 || screenPos.x > Screen.width ||
             screenPos.y < 0 || screenPos.y > Screen.height;
@@ -64,7 +64,7 @@ public class AlertIconController : MonoBehaviour
             indicatorUI.anchoredPosition = canvasPos;
 
             // Optional: Rotate to point at enemy
-            Vector3 direction = (enemy.position - mainCamera.transform.position).normalized;
+            Vector3 direction = (target.position - mainCamera.transform.position).normalized;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             indicatorUI.rotation = Quaternion.Euler(0, 0, angle - 90);
         }
@@ -85,7 +85,7 @@ public class AlertIconController : MonoBehaviour
     }
     public void SetOpacity()
     {
-        var distance = Vector3.Distance(enemy.position, GameViewController.Instance.Player.transform.position);
+        var distance = Vector3.Distance(target.position, GameViewController.Instance.Player.transform.position);
         if (distance < distanceLevel5)
         {
             _opacity = opacityLevel5;
