@@ -20,7 +20,10 @@ public class EndPointController : MonoBehaviour
     {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         _uiManager = FindObjectOfType<UIManager>();
