@@ -6,6 +6,9 @@ namespace MeltDown
 {
     public class IcecreamController : MonoBehaviour, IGetDamageable
     {
+        [Header("Prefab")]
+        [SerializeField] AlertIconController _alertIconPrefab;
+
         [Header("Init Data")]
         [SerializeField] IcecreamSO _icecreamSO;
 
@@ -32,6 +35,8 @@ namespace MeltDown
             _gameViewController = gameViewController;
             if (_holderCharacter == null) _enablePickUp = true;
             else _enablePickUp = false;
+            var alert = Instantiate(_alertIconPrefab.gameObject, GameViewController.Instance.AlertRect.transform);
+            alert.GetComponent<AlertIconController>().Init(transform, GameViewController.Instance.AlertRect, alert.GetComponent<RectTransform>());
         }
 
         public void GetDamage(float atk, float power)

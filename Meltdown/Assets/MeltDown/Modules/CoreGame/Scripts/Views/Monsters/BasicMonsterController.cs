@@ -36,10 +36,10 @@ namespace MeltDown
                 }
             } 
             if (_chasingIcecream == null) return;
-            Debug.Log(Vector3.Distance(transform.position, _chasingIcecream.transform.position));
+            //Debug.Log(Vector3.Distance(transform.position, _chasingIcecream.transform.position));
             if (Vector3.Distance(transform.position, _chasingIcecream.transform.position) <= _monster.AttackRange)
             {
-                Debug.Log("TryAttack");
+                //Debug.Log("TryAttack");
                 TryAttack();
             }
 

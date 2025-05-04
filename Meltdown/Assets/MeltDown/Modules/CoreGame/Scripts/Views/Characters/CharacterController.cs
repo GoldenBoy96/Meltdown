@@ -44,7 +44,7 @@ namespace MeltDown
                 _icecream.Init(this, _gameViewController);
             }
 
-            Init(null);
+            Init(GameViewController.Instance);
         }
 
         public void Init(GameViewController gameViewController)
