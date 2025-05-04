@@ -15,8 +15,8 @@ MonoBehaviour:
   _data:
     _icecreamName: Default
     _description: Just a default icecream
-    _maxHp: 500
-    _hp: 500
+    _maxHp: 100
+    _hp: 100
     _def: 50
-    _meltDownPerSecond: 1
+    _meltDownPerSecond: 0.5
     _pickUpTime: 3
