@@ -19,7 +19,10 @@ public class EndPointController : MonoBehaviour
     private void Start()
     {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
         _uiManager = FindObjectOfType<UIManager>();
         Debug.Log("UIManager found: " + (_uiManager != null));
 
