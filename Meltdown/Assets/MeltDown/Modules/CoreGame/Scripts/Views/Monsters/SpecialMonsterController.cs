@@ -15,7 +15,7 @@ namespace MeltDown
             _player = GameViewController.Instance.Player;
         }
 
-        public override void Update()
+        public override void FixedUpdate()
         {
             //base.Update();
             ChasePlayer();

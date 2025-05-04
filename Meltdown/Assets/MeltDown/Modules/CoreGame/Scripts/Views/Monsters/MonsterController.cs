@@ -39,7 +39,7 @@ namespace MeltDown
             _alert.GetComponent<AlertIconController>().Init(transform, _gameViewController.AlertRect, _alert);
         }
 
-        public virtual void Update()
+        public virtual void FixedUpdate()
         {
             ReturnToCamp();
         }

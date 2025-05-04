@@ -13,9 +13,9 @@ namespace MeltDown
         [Header("Runtime Data")]
         [SerializeField] protected IcecreamController _chasingIcecream;
 
-        public override void Update()
+        public override void FixedUpdate()
         {
-            base.Update();
+            base.FixedUpdate();
             ChaseIcecream();
         }
         public virtual void DetectIcecream(IcecreamController chasingIcecream)

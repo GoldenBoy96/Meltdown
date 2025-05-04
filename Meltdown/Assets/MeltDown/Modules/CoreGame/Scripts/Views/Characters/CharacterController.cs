@@ -63,7 +63,7 @@ namespace MeltDown
             }
         }
 
-        void Update()
+        void FixedUpdate()
         {
             HandleMovement();
             HandleWeaponMovement();

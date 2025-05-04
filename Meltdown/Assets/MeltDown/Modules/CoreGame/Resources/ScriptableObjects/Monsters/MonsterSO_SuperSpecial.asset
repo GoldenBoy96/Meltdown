@@ -19,7 +19,7 @@ MonoBehaviour:
     _hp: 500
     _atk: 50
     _def: 50
-    _spe: 20
+    _spe: 95
     _maxDectetionRange: 7
     _minDectetionRange: 0.5
     _attackRange: 0.6
