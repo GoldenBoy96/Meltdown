@@ -27,7 +27,7 @@ namespace MeltDown
 
         public bool IsAttackable { get => _isAttackable; private set => _isAttackable = value; }
 
-        private void Start()
+        public virtual void Start()
         {
             _monster = _monsterSO.Data;
             Init(GameViewController.Instance);

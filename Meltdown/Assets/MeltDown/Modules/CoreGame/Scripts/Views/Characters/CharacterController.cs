@@ -31,6 +31,7 @@ namespace MeltDown
         private bool _isFacingRight = true;
 
         public Character Character { get => _character; private set => _character = value; }
+        public IcecreamController Icecream { get => _icecream; private set => _icecream = value; }
 
         void Start()
         {
