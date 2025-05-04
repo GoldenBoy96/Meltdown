@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7571068339266524979}
-  - component: {fileID: 5345881642443252818}
-  - component: {fileID: 1630560617574599572}
   m_Layer: 0
   m_Name: WeaponHolder
   m_TagString: Untagged
@@ -34,77 +32,6 @@ Transform:
   - {fileID: 1090687561083190540}
   m_Father: {fileID: 1357488544564133973}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5345881642443252818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944182016029457822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa5b448550915da41afa63ac7617dbcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weaponSO: {fileID: 11400000, guid: fedfc9fd2b86e2344a5da4d8f8b9d879, type: 2}
-  _weapon:
-    _weaponName: 
-    _description: 
-    _power: 0
-    _cooldown: 0
-    _range: 0
-    _angle: 0
-    _direction: 0
-  _isAttackable: 1
---- !u!60 &1630560617574599572
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944182016029457822}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.5046278, y: -0.0008329153}
-      - {x: 1.2982554, y: 0.50664425}
-      - {x: 0.48179528, y: -0.018879145}
-      - {x: 1.2993824, y: -0.53860605}
-  m_UseDelaunayMesh: 0
 --- !u!1 &3607338835654056821
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +92,7 @@ MonoBehaviour:
   _characterVisual: {fileID: 4785672555521134623}
   _icecreamHolder: {fileID: 618978773125184839}
   _joystick: {fileID: 6908462908354556629}
-  _weaponController: {fileID: 5345881642443252818}
+  _weaponController: {fileID: 8576284006188194489}
   _weaponDistance: 0.1
   _character:
     _characterName: 
@@ -242,7 +169,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -374,6 +301,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1090687561083190540}
   - component: {fileID: 8735802818822842113}
+  - component: {fileID: 8576284006188194489}
+  - component: {fileID: 4484974009336320276}
   m_Layer: 0
   m_Name: Weapon_0
   m_TagString: Untagged
@@ -448,6 +377,78 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8576284006188194489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5971370675078925594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa5b448550915da41afa63ac7617dbcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponSO: {fileID: 11400000, guid: fedfc9fd2b86e2344a5da4d8f8b9d879, type: 2}
+  _weapon:
+    _weaponName: 
+    _description: 
+    _power: 0
+    _cooldown: 0
+    _range: 0
+    _angle: 0
+    _direction: 0
+    _knockBackForce: 0
+  _isAttackable: 1
+--- !u!60 &4484974009336320276
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5971370675078925594}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.51, y: 2.23}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.01355195, y: 1.1293851}
+      - {x: -0.83282465, y: 0.6428127}
+      - {x: -0.028846174, y: -1.1082484}
+      - {x: 0.8840636, y: 0.58480614}
+  m_UseDelaunayMesh: 0
 --- !u!1 &6322647843739487878
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +864,14 @@ PrefabInstance:
       propertyPath: m_EdgeRadius
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5676217267625614841, guid: a97814922bd817044adc6cf5719d5cbc, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5676217267625614841, guid: a97814922bd817044adc6cf5719d5cbc, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6604264981535318196, guid: a97814922bd817044adc6cf5719d5cbc, type: 3}
       propertyPath: m_Size.x
       value: 0.7
@@ -874,14 +883,6 @@ PrefabInstance:
     - target: {fileID: 6604264981535318196, guid: a97814922bd817044adc6cf5719d5cbc, type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676217267625614841, guid: a97814922bd817044adc6cf5719d5cbc, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5676217267625614841, guid: a97814922bd817044adc6cf5719d5cbc, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6604264981535318196, guid: a97814922bd817044adc6cf5719d5cbc, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
