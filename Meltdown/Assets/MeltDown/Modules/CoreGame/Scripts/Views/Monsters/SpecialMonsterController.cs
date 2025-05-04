@@ -36,8 +36,9 @@ namespace MeltDown
                 if (_monsterCamp.IsTriggerHordeAttack)
                 {
                     if (Vector3.Distance(transform.position, _player.transform.position) <= _monster.MinDectetionRange) return;
-                    Vector2 newPosition = Vector2.MoveTowards(_rb.position, _player.transform.position, _monster.Spe * Time.fixedDeltaTime);
-                    _rb.MovePosition(newPosition);
+                    Vector3 direction = (_player.transform.position - (Vector3)_rb.position).normalized;
+                    Vector3 force = direction * _monster.Spe / 100;
+                    _rb.AddForce(force, ForceMode2D.Impulse);
                 }
             }
             else
@@ -45,8 +46,9 @@ namespace MeltDown
                 var distance = Vector3.Distance(transform.position, _player.transform.position);
                 if (distance <= _monster.MinDectetionRange
                     || distance > _monster.MaxDectetionRange) return;
-                Vector2 newPosition = Vector2.MoveTowards(_rb.position, _player.transform.position, _monster.Spe * Time.fixedDeltaTime);
-                _rb.MovePosition(newPosition);
+                Vector3 direction = (_player.transform.position - (Vector3)_rb.position).normalized;
+                Vector3 force = direction * _monster.Spe / 100;
+                _rb.AddForce(force, ForceMode2D.Impulse);
             }
             //Debug.Log(Vector3.Distance(transform.position, _chasingIcecream.transform.position));
             if (Vector3.Distance(transform.position, _player.transform.position) <= _monster.AttackRange)

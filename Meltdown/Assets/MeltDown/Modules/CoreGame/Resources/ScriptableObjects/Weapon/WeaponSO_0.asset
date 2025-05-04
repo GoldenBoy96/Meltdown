@@ -20,3 +20,4 @@ MonoBehaviour:
     _range: 2
     _angle: 0
     _direction: 0
+    _knockBackForce: 50

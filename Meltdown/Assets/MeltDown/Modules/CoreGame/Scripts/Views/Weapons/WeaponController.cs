@@ -37,6 +37,7 @@ namespace MeltDown
                 foreach (var monster in _inRangeMonsterController.ToList())
                 {
                     monster.GetDamage(_characterController.Character.Atk, _weapon.Power);
+                    KnockBackHelper.Knockback(GameViewController.Instance.Player.transform, monster.GetComponent<Rigidbody2D>(), _weapon.KnockBackForce);
                 }
                 CooldownAttack();
             }
@@ -54,25 +55,6 @@ namespace MeltDown
             _isAttackable = true;
         }
 
-        //private void OnCollisionEnter2D(Collision2D collision)
-        //{
-        //    Debug.Log("OnTriggerEnter2D");
-        //    collision.gameObject.TryGetComponent<MonsterController>(out var monster);
-        //    if (monster != null)
-        //    {
-        //        Debug.Log(monster);
-        //        _inRangeMonsterController.Add(monster);
-        //    }
-        //}
-        //private void OnCollisionExit(Collision collision)
-        //{
-        //    Debug.Log("OnTriggerEnter2D");
-        //    collision.gameObject.TryGetComponent<MonsterController>(out var monster);
-        //    if (monster != null)
-        //    {
-        //        _inRangeMonsterController.Remove(monster);
-        //    }
-        //}
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Monster"))

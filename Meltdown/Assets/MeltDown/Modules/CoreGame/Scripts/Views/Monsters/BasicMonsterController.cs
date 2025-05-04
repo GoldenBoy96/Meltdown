@@ -44,8 +44,9 @@ namespace MeltDown
             }
 
             if (Vector3.Distance(transform.position, _chasingIcecream.transform.position) <= _monster.MinDectetionRange) return;
-            Vector2 newPosition = Vector2.MoveTowards(_rb.position, _chasingIcecream.transform.position, _monster.Spe * Time.fixedDeltaTime);
-            _rb.MovePosition(newPosition);
+            Vector3 direction = (_chasingIcecream.transform.position - (Vector3)_rb.position).normalized;
+            Vector3 force = direction * _monster.Spe / 100;
+            _rb.AddForce(force, ForceMode2D.Impulse);
         }
 
         public override void TryAttack()

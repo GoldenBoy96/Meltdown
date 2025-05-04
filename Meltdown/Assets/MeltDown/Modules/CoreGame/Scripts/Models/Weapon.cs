@@ -17,6 +17,7 @@ namespace MeltDown
         [SerializeField] float _range;
         [SerializeField] float _angle;
         [SerializeField] float _direction;
+        [SerializeField] float _knockBackForce;
 
         public Guid Id
         {
@@ -34,6 +35,7 @@ namespace MeltDown
         public float Range { get => _range; set => _range = value; }
         public float Angle { get => _angle; set => _angle = value; }
         public float Direction { get => _direction; set => _direction = value; }
+        public float KnockBackForce { get => _knockBackForce; set => _knockBackForce = value; }
 
         public override bool Equals(object obj)
         {

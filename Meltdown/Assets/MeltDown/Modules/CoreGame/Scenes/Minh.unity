@@ -289,7 +289,52 @@ MonoBehaviour:
     _range: 0
     _angle: 0
     _direction: 0
+    _knockBackForce: 0
   _isAttackable: 1
+--- !u!1 &624636042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 624636043}
+  - component: {fileID: 624636044}
+  m_Layer: 0
+  m_Name: KnockBackHelper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &624636043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624636042}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1364858009}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &624636044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624636042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e168ac068203894299e9188880db483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &635951156
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +469,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9ca85b1919f3b8428f2dca0aa3eab44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1364858009 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 746496268444051729, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
+  m_PrefabInstance: {fileID: 1479874759221246381}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1661451302
 GameObject:
   m_ObjectHideFlags: 0
@@ -766,7 +816,7 @@ PrefabInstance:
     - target: {fileID: 4061522691867698291, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
       propertyPath: _weaponController
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 198013638}
     - target: {fileID: 4644098933249770999, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
       propertyPath: m_Name
       value: 'GameViewController '
@@ -835,7 +885,10 @@ PrefabInstance:
     - {fileID: 3132896242232771732, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
     - {fileID: 8640931801992981330, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 746496268444051729, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 624636043}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3716800595155217884, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
       insertIndex: -1
