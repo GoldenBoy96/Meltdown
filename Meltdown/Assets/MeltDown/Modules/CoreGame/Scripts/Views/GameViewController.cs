@@ -42,9 +42,14 @@ namespace MeltDown
             {
                 canvas.worldCamera = _mainCam;
             }
-            AudioManager.Instance.PlayMusic("bg_music");
+            StartCoroutine(WaitThenPlayBgMusic());
         }
 
+        IEnumerator WaitThenPlayBgMusic()
+        {
+            yield return new WaitForSeconds(0.1f);
+            AudioManager.Instance.PlayMusic("bg_music");
+        }
         private void OnDisable()
         {
             AudioManager.Instance.StopMusic();
