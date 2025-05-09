@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdateLevelButtons()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 2);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
@@ -71,7 +71,7 @@ public class UIManager : MonoBehaviour
     public void OpenSettingsPanel() => _settingsPanel.SetActive(true);
     public void CloseSettingsPanel() => _settingsPanel.SetActive(false);
     public void OpenMainStagesPanel() { _mainStagesPanel.SetActive(true); _mainMenuPanel.SetActive(false); }
-    public void Home() { _mainStagesPanel.SetActive(false); _mainMenuPanel.SetActive(true); }
+    public void Home() { SceneManager.LoadScene("MainHome"); }
 
     public void CompleteCurrentLevel()
     {
