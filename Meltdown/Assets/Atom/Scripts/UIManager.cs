@@ -10,9 +10,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform _levelParent;
 
     [Header("Level Buttons UI")]
-    [SerializeField] private Button[] levelButtons; // Các button trong màn chọn level
+    [SerializeField] private Button[] levelButtons; // Level selection buttons
     [SerializeField] private Sprite buttonLockSprite;
     [SerializeField] private Sprite withStartBtnSprite;
+    [SerializeField] private button CloseBtnSprite;;
 
     private GameObject currentLevel;
     private int currentLevelIndex;
@@ -22,51 +23,53 @@ public class UIManager : MonoBehaviour
         UpdateLevelButtons();
     }
 
-    // Cập nhật trạng thái nút level
+    // Update level button states based on unlocked levels
     private void UpdateLevelButtons()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1); // Lấy level mở khóa hiện tại
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
             if (i < unlockedLevel)
             {
-                levelButtons[i].interactable = true; // Bật nút
-                levelButtons[i].image.sprite = withStartBtnSprite; // Hình ảnh nút có thể bấm
+                levelButtons[i].interactable = true;
+                levelButtons[i].image.sprite = withStartBtnSprite;
             }
             else
             {
-                levelButtons[i].interactable = false; // Tắt nút
-                levelButtons[i].image.sprite = buttonLockSprite; // Hình ảnh nút khóa
+                levelButtons[i].interactable = false;
+                levelButtons[i].image.sprite = buttonLockSprite;
             }
         }
     }
 
-    // Mở panel Settings
+    // Open Settings panel
     public void OpenSettingsPanel()
     {
         _settingsPanel.SetActive(true);
     }
 
-    // Đóng panel Settings
-    public void Close()
+    // Close Settings panel
+    public void CloseSettingsPanel()
     {
         _settingsPanel.SetActive(false);
     }
 
-    // Mở panel chọn stage
+    // Open stage selection panel
     public void OpenMainStagesPanel()
     {
         _mainStagesPanel.SetActive(true);
+        _mainMenuPanel.SetActive(false); // Hide main menu
     }
 
-    // Trở về màn chính
+    // Return to the main menu
     public void Home()
     {
         _mainStagesPanel.SetActive(false);
+        _mainMenuPanel.SetActive(true); // Ensure the main menu is displayed
     }
 
-    // Chơi level
+    // Play selected level
     public void PlayLevel(int levelIndex)
     {
         _mainStagesPanel.SetActive(false);
@@ -78,27 +81,27 @@ public class UIManager : MonoBehaviour
             Destroy(currentLevel);
         }
 
-        if (levelIndex >= 0 && levelIndex < _levelPrefabs.Length)
+        if (levelIndex >= 0 && levelIndex < _levelPrefabs.Length && _levelPrefabs[levelIndex] != null)
         {
             currentLevel = Instantiate(_levelPrefabs[levelIndex], _levelParent);
         }
         else
         {
-            Debug.Log("Không tìm thấy level với chỉ số: " + levelIndex);
+            Debug.LogWarning($"Level prefab is missing or index out of bounds: {levelIndex}");
         }
     }
 
+    // Unlock next level upon completion
     public void CompleteCurrentLevel()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1); // Lấy level hiện tại đã mở
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
 
-        // Mở khóa tất cả các level
-        PlayerPrefs.SetInt("UnlockedLevel", levelButtons.Length); // Cập nhật để mở tất cả các level
-        PlayerPrefs.Save(); // Lưu lại thay đổi
-
-        // Cập nhật lại giao diện nút level
-        UpdateLevelButtons();
+        // Unlock next level only if completing a new one
+        if (currentLevelIndex + 1 > unlockedLevel && currentLevelIndex + 1 <= levelButtons.Length)
+        {
+            PlayerPrefs.SetInt("UnlockedLevel", currentLevelIndex + 1);
+            PlayerPrefs.Save();
+            UpdateLevelButtons();
+        }
     }
-
-
 }
