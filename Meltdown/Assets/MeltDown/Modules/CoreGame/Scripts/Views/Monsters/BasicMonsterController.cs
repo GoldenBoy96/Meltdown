@@ -13,6 +13,7 @@ namespace MeltDown
 
         [Header("Runtime Data")]
         [SerializeField] protected IcecreamController _chasingIcecream;
+        [SerializeField] protected bool _isAttacking = false;
 
         public override void FixedUpdate()
         {
@@ -29,6 +30,7 @@ namespace MeltDown
         }
         public virtual void ChaseIcecream()
         {
+            if (_isAttacking) return;
             if (_monsterCamp != null)
             {
                 if (_monsterCamp.IsTriggerHordeAttack)
@@ -57,12 +59,24 @@ namespace MeltDown
             //    + IsAttackable);
             if (_chasingIcecream != null && Vector3.Distance(transform.position, _chasingIcecream.transform.position) <= _monster.AttackRange && IsAttackable)
             {
-                _chasingIcecream.GetDamage(_monster.Atk, _monster.AttackPower);
-                CooldownAttack();
-                AudioManager.Instance.PlaySound("monster_attack");
+                StartCoroutine(AttackCoroutine());
             }
         }
 
+        IEnumerator AttackCoroutine()
+        {
+            _isAttacking = true;
+            _chasingIcecream.GetDamage(_monster.Atk, _monster.AttackPower);
+            CooldownAttack();
+
+            Vector3 direction = (_chasingIcecream.transform.position - (Vector3)_rb.position).normalized;
+            Vector3 force = -direction * _monster.Spe * 25 / 100 ;
+            _rb.AddForce(force, ForceMode2D.Impulse);
+            yield return new WaitForSeconds(1f);
+            AudioManager.Instance.PlaySound("monster_attack");
+            _isAttacking = false;
+        }
+ 
         public void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Icecream"))
