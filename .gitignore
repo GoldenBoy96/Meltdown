@@ -87,3 +87,9 @@ crashlytics-build.properties
 
 # Rider Rider
 .idea/
+
+# Visual Studio Code
+.vscode/
+
+# MacOS
+.DS_Store
