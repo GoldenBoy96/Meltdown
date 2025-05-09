@@ -16,6 +16,7 @@ namespace MeltDown
         [SerializeField] private Transform _characterVisual;
         [SerializeField] private Transform _icecreamHolder;
         [SerializeField] private Joystick _joystick;
+        [SerializeField] private Animator _animator;
 
         [Header("Weapon Controller")]
         [SerializeField] private WeaponController _weaponController;
@@ -63,6 +64,7 @@ namespace MeltDown
                 _icecream.transform.localPosition = Vector3.zero;
                 _icecream.Init(this, _gameViewController);
             }
+            AnimatorHelper.PlayAnimation(_animator, CoreGameConstants.Idle);
         }
 
         void FixedUpdate()
@@ -78,6 +80,14 @@ namespace MeltDown
             _rb.totalForce = Vector3.zero;
             _moveInput = new Vector2(_joystick.Horizontal, _joystick.Vertical).normalized;
             _rb.AddForce(_moveInput * Character.Spe / 100, ForceMode2D.Impulse);
+            if (_moveInput != Vector2.zero)
+            {
+                AnimatorHelper.PlayAnimation(_animator, CoreGameConstants.Run);
+            }
+            else
+            {
+                AnimatorHelper.PlayAnimation(_animator, CoreGameConstants.Idle);
+            }
         }
 
         private void HandleWeaponMovement()
@@ -120,7 +130,7 @@ namespace MeltDown
             _icecream.transform.localPosition = Vector3.zero;
             _icecream.PickUp(this);
         }
-        
+
         public void PickUpWeapon(WeaponController weaponController)
         {
             if (_weapon != null)

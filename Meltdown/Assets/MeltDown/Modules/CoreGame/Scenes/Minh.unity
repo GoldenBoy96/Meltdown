@@ -417,6 +417,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8346202318434056569, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
+      propertyPath: _mainCam
+      value: 
+      objectReference: {fileID: 99509675}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
