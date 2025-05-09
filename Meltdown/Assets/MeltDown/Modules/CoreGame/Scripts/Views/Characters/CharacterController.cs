@@ -11,8 +11,8 @@ namespace MeltDown
 
         [Header("Components")]
         [SerializeField] private Rigidbody2D _rb;
-        [SerializeField] private Transform _weaponTransform;
-        [SerializeField] private Transform _weapon;
+        [SerializeField] private Transform _weaponHolder;
+        [SerializeField] private WeaponController _weapon;
         [SerializeField] private Transform _characterVisual;
         [SerializeField] private Transform _icecreamHolder;
         [SerializeField] private Joystick _joystick;
@@ -27,6 +27,7 @@ namespace MeltDown
         [SerializeField] Character _character;
         [SerializeField] GameViewController _gameViewController;
         [SerializeField] IcecreamController _icecream;
+        //[SerializeField] IcecreamController _weapon;
 
 
         private Vector2 _moveInput;
@@ -55,7 +56,7 @@ namespace MeltDown
             _gameViewController = gameViewController;
 
             // Khởi tạo weapon controller
-            _weaponController.Init(this, _gameViewController);
+            //_weaponController.Init(this, _gameViewController);
             if (_icecream == null) _icecream = _icecreamHolder.GetComponentInChildren<IcecreamController>();
             if (_icecream != null)
             {
@@ -85,11 +86,11 @@ namespace MeltDown
             {
                 // Tính toán vị trí của vũ khí dựa vào hướng joystick
                 Vector2 weaponOffset = _moveInput.normalized * _weaponDistance;
-                _weaponTransform.localPosition = weaponOffset;
+                _weaponHolder.localPosition = weaponOffset;
 
                 // Xoay vũ khí về hướng của joystick
                 float angle = Mathf.Atan2(weaponOffset.y, weaponOffset.x) * Mathf.Rad2Deg;
-                _weaponTransform.rotation = Quaternion.Euler(0f, 0f, angle);
+                _weaponHolder.rotation = Quaternion.Euler(0f, 0f, angle);
             }
         }
 
@@ -118,6 +119,18 @@ namespace MeltDown
             _icecream.transform.SetParent(_icecreamHolder);
             _icecream.transform.localPosition = Vector3.zero;
             _icecream.PickUp(this);
+        }
+        
+        public void PickUpWeapon(WeaponController weaponController)
+        {
+            if (_weapon != null)
+            {
+                _weapon.DropDown();
+            }
+            _weapon = weaponController;
+            _weapon.transform.SetParent(_weaponHolder);
+            _weapon.transform.localPosition = Vector3.zero;
+            _weapon.PickUp(this);
         }
 
         [ContextMenu("DropIcecream")]
