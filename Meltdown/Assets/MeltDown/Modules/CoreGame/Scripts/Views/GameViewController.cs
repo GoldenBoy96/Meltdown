@@ -1,11 +1,11 @@
-using OurUtils;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Template;
+using OurUtils;
 using UnityEngine;
 
-namespace MeltDown
+namespace MeltDown.Modules.CoreGame.Scripts.Views
 {
     public class GameViewController : SingletonMono<GameViewController>
     {
@@ -48,11 +48,11 @@ namespace MeltDown
         IEnumerator WaitThenPlayBgMusic()
         {
             yield return new WaitForSeconds(0.1f);
-            AudioManager.Instance.PlayMusic("bg_music");
+            // AudioManager.Instance.PlayMusic("bg_music");
         }
         private void OnDisable()
         {
-            AudioManager.Instance.StopMusic();
+            // AudioManager.Instance.StopMusic();
         }
     }
 }
