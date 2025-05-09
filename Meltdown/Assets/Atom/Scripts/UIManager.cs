@@ -13,7 +13,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button[] levelButtons; // Level selection buttons
     [SerializeField] private Sprite buttonLockSprite;
     [SerializeField] private Sprite withStartBtnSprite;
-    [SerializeField] private button CloseBtnSprite;;
 
     private GameObject currentLevel;
     private int currentLevelIndex;
