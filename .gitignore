@@ -85,4 +85,11 @@ crashlytics-build.properties
 # Dirty Place
 **/[Dd]irty[Pp]lace/
 
+# Rider Rider
+.idea/
 
+# Visual Studio Code
+.vscode/
+
+# MacOS
+.DS_Store
