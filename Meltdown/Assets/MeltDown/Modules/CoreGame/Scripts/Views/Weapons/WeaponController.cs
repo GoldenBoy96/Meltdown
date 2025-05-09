@@ -39,6 +39,16 @@ namespace MeltDown
                 _enablePickUp = true;
             }
         }
+
+        private void Start()
+        {
+            Init(GameViewController.Instance);
+        }
+        public void Init(GameViewController gameViewController)
+        {
+            _weapon = _weaponSO.Data;
+            _gameViewController = gameViewController;
+        }
         public void Init(CharacterController characterController, GameViewController gameViewController)
         {
             _weapon = _weaponSO.Data;
