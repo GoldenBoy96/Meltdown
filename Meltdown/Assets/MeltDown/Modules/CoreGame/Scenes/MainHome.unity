@@ -745,6 +745,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CloseButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4932855350792846946, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5023368939517517859, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1097,9 +1101,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8772665348294839600, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7564279084005617756, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
+    - {fileID: 4932855350792846946, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}

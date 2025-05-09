@@ -57,7 +57,7 @@ namespace MeltDown
             _gameViewController = gameViewController;
 
             // Khởi tạo weapon controller
-            //_weaponController.Init(this, _gameViewController);
+            if (_weaponController != null) _weaponController.Init(this, _gameViewController);
             if (_icecream == null) _icecream = _icecreamHolder.GetComponentInChildren<IcecreamController>();
             if (_icecream != null)
             {
@@ -79,14 +79,15 @@ namespace MeltDown
         {
             _rb.totalForce = Vector3.zero;
             _moveInput = new Vector2(_joystick.Horizontal, _joystick.Vertical).normalized;
-            _rb.AddForce(_moveInput * Character.Spe / 100, ForceMode2D.Impulse);
             if (_moveInput != Vector2.zero)
             {
+                _rb.AddForce(_moveInput * Character.Spe / 100, ForceMode2D.Impulse);
                 AnimatorHelper.PlayAnimation(_animator, CoreGameConstants.Run);
             }
             else
             {
                 AnimatorHelper.PlayAnimation(_animator, CoreGameConstants.Idle);
+                _rb.totalForce = Vector3.zero;
             }
         }
 
@@ -140,6 +141,7 @@ namespace MeltDown
             _weapon = weaponController;
             _weapon.transform.SetParent(_weaponHolder);
             _weapon.transform.localPosition = Vector3.zero;
+            _weapon.Init(this, GameViewController.Instance);
             _weapon.PickUp(this);
         }
 

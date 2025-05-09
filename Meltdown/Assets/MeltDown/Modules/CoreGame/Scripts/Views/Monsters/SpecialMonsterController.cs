@@ -76,11 +76,23 @@ namespace MeltDown
             {
                 if (Vector3.Distance(transform.position, _player.transform.position) <= _monster.AttackRange && IsAttackable)
                 {
-                    KnockBackHelper.Knockback(transform, _player.GetComponent<Rigidbody2D>(), 5);
-                    CooldownAttack();
+                    StartCoroutine(AttackCoroutine());
                     AudioManager.Instance.PlaySound("monster_attack");
                 }
             }
+        }
+        IEnumerator AttackCoroutine()
+        {
+            _isAttacking = true;
+            KnockBackHelper.Knockback(transform, _player.GetComponent<Rigidbody2D>(), 5);
+            CooldownAttack();
+
+            Vector3 direction = (_player.transform.position - (Vector3)_rb.position).normalized;
+            Vector3 force = -direction * _monster.Spe * 25 / 100;
+            _rb.AddForce(force, ForceMode2D.Impulse);
+            yield return new WaitForSeconds(1f);
+            AudioManager.Instance.PlaySound("monster_attack");
+            _isAttacking = false;
         }
 
     }
