@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
-using UnityEngine.Pool;
-using static UnityEngine.GraphicsBuffer;
 
 namespace MeltDown
 {
@@ -74,7 +72,10 @@ namespace MeltDown
             {
                 if (Vector3.Distance(transform.transform.position, _originalPosition) > 0.1f)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, _originalPosition, _monster.Spe * Time.deltaTime);
+                    _rb.totalForce = Vector3.zero;
+                    Vector3 direction = (_originalPosition - transform.position).normalized;
+                    Vector3 force = direction * _monster.Spe / 100;
+                    _rb.AddForce(force, ForceMode2D.Impulse);
                 }
             }
         }

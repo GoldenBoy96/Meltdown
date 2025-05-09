@@ -1,5 +1,7 @@
 using OurUtils;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Template;
 using UnityEngine;
 
@@ -17,6 +19,7 @@ namespace MeltDown
         [SerializeField] Transform _endPoint;
         [SerializeField] RectTransform _alertRect;
         [SerializeField] Camera _mainCam;
+        [SerializeField] List<Canvas> _canvasToSetCamera = new();
 
         [Header("Runtime Component")]
         [SerializeField] CharacterController _player;
@@ -32,7 +35,13 @@ namespace MeltDown
 
         private void Start()
         {
+            Application.targetFrameRate = 60;
             _mainCam = Camera.main;
+            _canvasToSetCamera = FindObjectsOfType<Canvas>().ToList();
+            foreach(var canvas in _canvasToSetCamera)
+            {
+                canvas.worldCamera = _mainCam;
+            }
             AudioManager.Instance.PlayMusic("bg_music");
         }
 
