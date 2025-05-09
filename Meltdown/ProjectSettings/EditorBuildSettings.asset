@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/MeltDown/Modules/CoreGame/Scenes/Minh.unity
     guid: e894c1e69c2e5394690b308fa868cb17
+  - enabled: 1
+    path: Assets/Settings/Scenes/Level1.unity
+    guid: 2e3ff7162a3c38247a63bc90b3a623a6
   m_configObjects: {}

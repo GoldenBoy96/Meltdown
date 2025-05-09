@@ -1,43 +1,41 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelSelector : MonoBehaviour
 {
-    public Transform levelParent; // Đây là nơi chứa các level đã load
-    private GameObject currentLevel;
-
     void Start()
     {
         int levelIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 1);
-        LoadLevel(levelIndex);  // Load level khi bắt đầu game
+        LoadLevel(levelIndex); // Load scene khi bắt đầu game
     }
 
     public void LoadLevel(int index)
     {
-        // Xóa level hiện tại nếu có
-        if (currentLevel != null)
-            Destroy(currentLevel);
-
-        string prefabPath = "Prefabs/Levels/Level_" + index;
-        GameObject levelPrefab = Resources.Load<GameObject>(prefabPath);
-
-        if (levelPrefab != null)
+        string sceneName = "Level" + index; // Giả sử scene có tên "Level1", "Level2", ...
+        if (SceneExists(sceneName))
         {
-            // Instantiate prefab tại vị trí của levelParent
-            currentLevel = Instantiate(levelPrefab, levelParent);
-            PlayerPrefs.SetInt("CurrentLevelIndex", index);  // Lưu lại level hiện tại
+            PlayerPrefs.SetInt("CurrentLevelIndex", index); // Lưu lại level hiện tại
+            SceneManager.LoadScene(sceneName); // Load scene theo tên
         }
         else
         {
-            Debug.Log("Không tìm thấy level " + index);
-            // TODO: Load MainMenu hoặc cảnh thắng nếu muốn
+            Debug.LogError($"Scene {sceneName} không tồn tại. Hãy kiểm tra Build Settings!");
         }
     }
 
     public void LoadNextLevel()
     {
         int nextIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 1) + 1;
-        LoadLevel(nextIndex);  // Load level tiếp theo
+        LoadLevel(nextIndex); // Load scene tiếp theo
+    }
+
+    private bool SceneExists(string sceneName)
+    {
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+        {
+            string path = SceneUtility.GetScenePathByBuildIndex(i);
+            if (path.Contains(sceneName)) return true;
+        }
+        return false;
     }
 }
