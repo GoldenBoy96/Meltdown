@@ -85,4 +85,5 @@ crashlytics-build.properties
 # Dirty Place
 **/[Dd]irty[Pp]lace/
 
-
+# Rider Rider
+.idea/
