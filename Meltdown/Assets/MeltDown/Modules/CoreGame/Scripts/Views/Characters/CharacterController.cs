@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using MeltDown.Modules.CoreGame.Scripts.Views;
 using Template;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
@@ -42,6 +43,8 @@ namespace MeltDown
 
         public Character Character { get => _character; private set => _character = value; }
         public IcecreamController Icecream { get => _icecream; private set => _icecream = value; }
+        
+        public Vector2 MoveInput => _moveInput;
 
         void Start()
         {
