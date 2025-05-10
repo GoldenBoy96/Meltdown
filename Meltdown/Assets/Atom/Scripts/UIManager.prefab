@@ -1349,12 +1349,6 @@ MonoBehaviour:
   _settingsPanel: {fileID: 5638705844612078920}
   _mainStagesPanel: {fileID: 5630815094919878996}
   _mainMenuPanel: {fileID: 745038574712161272}
-  _levelPrefabs:
-  - {fileID: 3456179784763848063, guid: 4872a3a712eaf5b4fae657e78f9c154b, type: 3}
-  - {fileID: 7250940741428406966, guid: 2976c46274f94e543a61930958025df3, type: 3}
-  - {fileID: 4327048091836746781, guid: 5eb9855bd73b9e1499fa29edf824a3f6, type: 3}
-  - {fileID: 6023991012322892878, guid: 359dae164144caa4bacb26b0df83737d, type: 3}
-  _levelParent: {fileID: 0}
   levelButtons:
   - {fileID: 1303611213259666252}
   - {fileID: 5340503806350753216}

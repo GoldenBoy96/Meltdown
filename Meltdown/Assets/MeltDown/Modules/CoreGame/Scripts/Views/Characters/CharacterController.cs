@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using MeltDown.Modules.CoreGame.Scripts.Views;
 using Template;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
@@ -30,12 +32,19 @@ namespace MeltDown
         [SerializeField] IcecreamController _icecream;
         //[SerializeField] IcecreamController _weapon;
 
+        [Header("Tutorial Panel")]
+        [SerializeField] private List<GameObject> _tutorialPanels;
+        private int _tutorialIndex = 0;
+        private bool _isInTutorial = false;
+
 
         private Vector2 _moveInput;
         private bool _isFacingRight = true;
 
         public Character Character { get => _character; private set => _character = value; }
         public IcecreamController Icecream { get => _icecream; private set => _icecream = value; }
+        
+        public Vector2 MoveInput => _moveInput;
 
         void Start()
         {
@@ -69,9 +78,9 @@ namespace MeltDown
 
         void FixedUpdate()
         {
-            HandleMovement();
-            HandleWeaponMovement();
-            FlipCharacter();
+                HandleMovement();
+                HandleWeaponMovement();
+                FlipCharacter();
         }
 
         // Xử lý di chuyển nhân vật
@@ -122,7 +131,13 @@ namespace MeltDown
         }
 
 
-
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Tutorial"))
+            {
+                _tutorialPanels[0].SetActive(true);
+            }
+        }
 
         public void PickUpIcecream(IcecreamController icecream)
         {

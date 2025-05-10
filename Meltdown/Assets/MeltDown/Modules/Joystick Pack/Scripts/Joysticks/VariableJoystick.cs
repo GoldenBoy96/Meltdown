@@ -33,6 +33,10 @@ public class VariableJoystick : Joystick
 
     public override void OnPointerDown(PointerEventData eventData)
     {
+        if (cam == null)
+        {
+            cam = eventData.pressEventCamera;
+        }
         if(joystickType != JoystickType.Fixed)
         {
             background.anchoredPosition = ScreenPointToAnchoredPosition(eventData.position);
