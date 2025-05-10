@@ -15,10 +15,10 @@ MonoBehaviour:
   _data:
     _monsterName: Default
     _description: Just a default monster
-    _maxHp: 500
+    _maxHp: 300
     _hp: 500
-    _atk: 50
-    _def: 50
+    _atk: 15
+    _def: 25
     _spe: 95
     _maxDectetionRange: 7
     _minDectetionRange: 0.5

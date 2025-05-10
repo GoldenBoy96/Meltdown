@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/StartGame.unity
+    guid: e547039e4aa5f6e4b8a4eac5c8f939dd
+  - enabled: 1
     path: Assets/MeltDown/Modules/CoreGame/Scenes/MainHome.unity
     guid: 7ddb963f62ac1e147a400c5ee167452d
   - enabled: 0
-    path: Assets/Settings/Scenes/URP2DSceneTemplate.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
     path: Assets/MeltDown/Modules/CoreGame/Scenes/Minh.unity
     guid: e894c1e69c2e5394690b308fa868cb17
+  - enabled: 1
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Levels/Level1.unity
+    guid: 6f71be569ca558243828eca43e6e4989
+  - enabled: 1
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Levels/Level2.unity
+    guid: ef712b737368709458ea3442d3b1569a
   m_configObjects: {}

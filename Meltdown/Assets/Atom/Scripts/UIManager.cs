@@ -1,38 +1,39 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject _settingsPanel;
     [SerializeField] private GameObject _mainStagesPanel;
     [SerializeField] private GameObject _mainMenuPanel;
-    [SerializeField] private GameObject[] _levelPrefabs;
-    [SerializeField] private Transform _levelParent;
 
     [Header("Level Buttons UI")]
-    [SerializeField] private Button[] levelButtons; // Level selection buttons
+    [SerializeField] private Button[] levelButtons;
     [SerializeField] private Sprite buttonLockSprite;
     [SerializeField] private Sprite withStartBtnSprite;
 
-    private GameObject currentLevel;
-    private int currentLevelIndex;
-
-    void Start()
+    private void Start()
     {
         UpdateLevelButtons();
     }
 
-    // Update level button states based on unlocked levels
     private void UpdateLevelButtons()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 2);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
+            int levelIndexTemp = i + 1; // Dùng biến tạm để tránh lỗi Lambda
+
+            // Xóa sự kiện cũ trước khi thêm mới, tránh lỗi click nhiều lần
+            levelButtons[i].onClick.RemoveAllListeners();
+
             if (i < unlockedLevel)
             {
                 levelButtons[i].interactable = true;
                 levelButtons[i].image.sprite = withStartBtnSprite;
+                levelButtons[i].onClick.AddListener(() => LoadLevel(levelIndexTemp));
             }
             else
             {
@@ -42,60 +43,41 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // Open Settings panel
-    public void OpenSettingsPanel()
+    public void LoadLevel(int levelIndex)
     {
-        _settingsPanel.SetActive(true);
-    }
+        string sceneName = "Level" + levelIndex;
 
-    // Close Settings panel
-    public void CloseSettingsPanel()
-    {
-        _settingsPanel.SetActive(false);
-    }
-
-    // Open stage selection panel
-    public void OpenMainStagesPanel()
-    {
-        _mainStagesPanel.SetActive(true);
-        _mainMenuPanel.SetActive(false); // Hide main menu
-    }
-
-    // Return to the main menu
-    public void Home()
-    {
-        _mainStagesPanel.SetActive(false);
-        _mainMenuPanel.SetActive(true); // Ensure the main menu is displayed
-    }
-
-    // Play selected level
-    public void PlayLevel(int levelIndex)
-    {
-        _mainStagesPanel.SetActive(false);
-        _mainMenuPanel.SetActive(false);
-        currentLevelIndex = levelIndex;
-
-        if (currentLevel != null)
+        if (SceneExists(sceneName))
         {
-            Destroy(currentLevel);
-        }
-
-        if (levelIndex >= 0 && levelIndex < _levelPrefabs.Length && _levelPrefabs[levelIndex] != null)
-        {
-            currentLevel = Instantiate(_levelPrefabs[levelIndex], _levelParent);
+            PlayerPrefs.SetInt("CurrentLevelIndex", levelIndex);
+            SceneManager.LoadScene(sceneName);
         }
         else
         {
-            Debug.LogWarning($"Level prefab is missing or index out of bounds: {levelIndex}");
+            Debug.LogError($"Scene '{sceneName}' không tồn tại. Kiểm tra Build Settings.");
         }
     }
 
-    // Unlock next level upon completion
+    private bool SceneExists(string sceneName)
+    {
+        for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+        {
+            string path = SceneUtility.GetScenePathByBuildIndex(i);
+            if (path.Contains(sceneName)) return true;
+        }
+        return false;
+    }
+
+    public void OpenSettingsPanel() => _settingsPanel.SetActive(true);
+    public void CloseSettingsPanel() => _settingsPanel.SetActive(false);
+    public void OpenMainStagesPanel() { _mainStagesPanel.SetActive(true); _mainMenuPanel.SetActive(false); }
+    public void Home() { SceneManager.LoadScene("MainHome"); }
+
     public void CompleteCurrentLevel()
     {
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        int currentLevelIndex = PlayerPrefs.GetInt("CurrentLevelIndex", 1);
 
-        // Unlock next level only if completing a new one
         if (currentLevelIndex + 1 > unlockedLevel && currentLevelIndex + 1 <= levelButtons.Length)
         {
             PlayerPrefs.SetInt("UnlockedLevel", currentLevelIndex + 1);

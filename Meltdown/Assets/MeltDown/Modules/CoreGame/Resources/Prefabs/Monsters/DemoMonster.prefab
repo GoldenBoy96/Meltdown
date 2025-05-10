@@ -554,6 +554,7 @@ MonoBehaviour:
   _originalPosition: {x: 0, y: 0, z: 0}
   _detectionArea: {fileID: 7330173102249744729}
   _chasingIcecream: {fileID: 0}
+  _isAttacking: 0
 --- !u!50 &5113020175096086183
 Rigidbody2D:
   serializedVersion: 4
@@ -623,7 +624,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5350738667686956519}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
