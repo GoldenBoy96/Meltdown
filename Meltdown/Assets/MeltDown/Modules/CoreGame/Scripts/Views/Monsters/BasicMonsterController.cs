@@ -70,10 +70,11 @@ namespace MeltDown
             CooldownAttack();
 
             Vector3 direction = (_chasingIcecream.transform.position - (Vector3)_rb.position).normalized;
-            Vector3 force = -direction * _monster.Spe * 25 / 100 ;
+            Vector3 force = -direction * _monster.Spe * 25 / 50 ;
             _rb.AddForce(force, ForceMode2D.Impulse);
             yield return new WaitForSeconds(1f);
             AudioManager.Instance.PlaySound("monster_attack");
+            yield return new WaitForSeconds(2f);
             _isAttacking = false;
         }
  
