@@ -24,4 +24,4 @@ MonoBehaviour:
     _minDectetionRange: 0.5
     _attackRange: 0.6
     _attackPower: 50
-    _attackCooldown: 1
+    _attackCooldown: 2
