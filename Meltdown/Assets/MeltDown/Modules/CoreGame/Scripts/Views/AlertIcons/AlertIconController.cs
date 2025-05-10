@@ -1,6 +1,7 @@
 using MeltDown;
 using System.Collections;
 using System.Collections.Generic;
+using MeltDown.Modules.CoreGame.Scripts.Views;
 using UnityEngine;
 using UnityEngine.UI;
 
