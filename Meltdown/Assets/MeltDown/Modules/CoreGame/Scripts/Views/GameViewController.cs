@@ -38,7 +38,7 @@ namespace MeltDown.Modules.CoreGame.Scripts.Views
             Application.targetFrameRate = 60;
             _mainCam = Camera.main;
             _canvasToSetCamera = FindObjectsOfType<Canvas>().ToList();
-            foreach(var canvas in _canvasToSetCamera)
+            foreach (var canvas in _canvasToSetCamera)
             {
                 canvas.worldCamera = _mainCam;
             }
@@ -48,11 +48,19 @@ namespace MeltDown.Modules.CoreGame.Scripts.Views
         IEnumerator WaitThenPlayBgMusic()
         {
             yield return new WaitForSeconds(0.1f);
+
+            // AudioManager.Instance.PlayMusic("bg_music");
+        }
+
+        private void OnEnable()
+        {
+            Time.timeScale = 1f;
             // AudioManager.Instance.PlayMusic("bg_music");
         }
         private void OnDisable()
         {
             // AudioManager.Instance.StopMusic();
+
         }
     }
 }

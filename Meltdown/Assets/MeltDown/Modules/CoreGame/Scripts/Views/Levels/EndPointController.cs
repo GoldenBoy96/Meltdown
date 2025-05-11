@@ -40,13 +40,13 @@ public class EndPointController : MonoBehaviour
                 _winGamePanel.SetActive(true);
 
             if (_uiManager != null)
-                _uiManager.CompleteCurrentLevel(); // Cập nhật trạng thái level khi người chơi thắng
+                _uiManager.CompleteCurrentLevel();
         }
     }
 
     // Xử lý khi nhấn OK trong panel chiến thắng
     public void okBtn()
     {
-        SceneManager.LoadScene(0); // Quay lại màn hình chính hoặc chơi lại level
+        SceneManager.LoadScene(0);
     }
 }
