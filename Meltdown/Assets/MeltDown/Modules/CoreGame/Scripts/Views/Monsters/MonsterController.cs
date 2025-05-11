@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using DG.Tweening;
 using MeltDown.Modules.CoreGame.Scripts.Views;
 using UnityEngine;
 
@@ -97,15 +98,23 @@ namespace MeltDown
             _isAttackable = true;
         }
 
+        private Coroutine _deadCoroutine;
         public void GetDamage(float atk, float power)
         {
             _monster.Hp -= IGetDamageable.CalculateTrueDamage(atk, power, _monster.Def);
             if (_monster.Hp <= 0)
             {
                 _monster.Hp = 0;
-                Destroy(gameObject);
+                if (_deadCoroutine == null) StartCoroutine(DeadCoroutine());
             }
             if (_monster.Hp > _monster.MaxHp) _monster.Hp = _monster.MaxHp;
+        }
+
+        IEnumerator DeadCoroutine()
+        {
+            _spriteRenderer.DOFade(0, 0.5f);
+            yield return new WaitForSeconds(0.5f);
+            Destroy(gameObject);
         }
         private void OnDestroy()
         {
