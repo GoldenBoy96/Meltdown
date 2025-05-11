@@ -34,7 +34,7 @@ namespace MeltDown
 
         [Header("Tutorial Panel")]
         [SerializeField] private List<GameObject> _tutorialPanels;
-        private int _tutorialIndex = 0;
+        private int _tutorialIndex = 0; 
         private bool _isInTutorial = false;
 
 
