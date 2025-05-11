@@ -93,6 +93,7 @@ namespace MeltDown
             _rb.AddForce(force, ForceMode2D.Impulse);
             yield return new WaitForSeconds(1f);
             AudioManager.Instance.PlaySound("monster_attack");
+            yield return new WaitForSeconds(1f);
             _isAttacking = false;
         }
 
