@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using DG.Tweening;
 using MeltDown.Modules.CoreGame.Scripts.Views;
 using Template;
 using UnityEngine;
@@ -35,6 +36,7 @@ namespace MeltDown
 
         public void ChasePlayer()
         {
+            if (_isAttacking) return;
             if (_monsterCamp != null)
             {
                 if (_monsterCamp.IsTriggerHordeAttack)
@@ -85,6 +87,9 @@ namespace MeltDown
         IEnumerator AttackCoroutine()
         {
             _isAttacking = true;
+            Vector3 tmpLocalPosition = _spriteRenderer.transform.localPosition;
+            _spriteRenderer.transform.DOLocalJump(tmpLocalPosition, 1, 1, 0.3f);
+            yield return new WaitForSeconds(0.3f);
             KnockBackHelper.Knockback(transform, _player.GetComponent<Rigidbody2D>(), 5);
             CooldownAttack();
 

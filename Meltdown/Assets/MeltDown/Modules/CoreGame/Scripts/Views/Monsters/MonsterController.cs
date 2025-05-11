@@ -16,6 +16,7 @@ namespace MeltDown
         [SerializeField] protected AlertIconController _alertIcon;
         [SerializeField] protected RectTransform _alert;
         [SerializeField] HealthBarController _healthBar;
+        [SerializeField] protected SpriteRenderer _spriteRenderer;
 
         [Header("Runtime Data")]
         [SerializeField] protected Monster _monster;

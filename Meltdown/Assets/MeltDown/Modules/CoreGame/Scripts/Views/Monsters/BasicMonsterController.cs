@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using Template;
@@ -66,11 +67,13 @@ namespace MeltDown
         IEnumerator AttackCoroutine()
         {
             _isAttacking = true;
+            _spriteRenderer.transform.DOLocalJump(_spriteRenderer.transform.localPosition, 1, 1, 0.3f);
+            yield return new WaitForSeconds(0.3f);
             _chasingIcecream.GetDamage(_monster.Atk, _monster.AttackPower);
             CooldownAttack();
 
             Vector3 direction = (_chasingIcecream.transform.position - (Vector3)_rb.position).normalized;
-            Vector3 force = -direction * _monster.Spe * 25 / 50 ;
+            Vector3 force = direction * _monster.Spe * 25 / 50 ;
             _rb.AddForce(force, ForceMode2D.Impulse);
             yield return new WaitForSeconds(1f);
             AudioManager.Instance.PlaySound("monster_attack");
