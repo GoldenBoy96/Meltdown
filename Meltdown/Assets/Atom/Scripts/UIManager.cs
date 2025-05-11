@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Sprite buttonLockSprite;
     [SerializeField] private Sprite withStartBtnSprite;
 
+    private int _nonGameScenesCount = 2;
+
     private void Start()
     {
         UpdateLevelButtons();
@@ -20,7 +22,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdateLevelButtons()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 2);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 4);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
@@ -54,7 +56,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"Scene '{sceneName}' không tồn tại. Kiểm tra Build Settings.");
+            Debug.LogError($"Scene '{sceneName}' not esisted.");
         }
     }
 
@@ -84,5 +86,18 @@ public class UIManager : MonoBehaviour
             PlayerPrefs.Save();
             UpdateLevelButtons();
         }
+    }
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LoadNextLevel()
+    {
+        Time.timeScale = 1f;
+        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        if (currentLevelIndex < (5 + _nonGameScenesCount - 1))
+            SceneManager.LoadScene(currentLevelIndex + 1);
     }
 }
