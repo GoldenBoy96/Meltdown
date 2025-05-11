@@ -69,6 +69,7 @@ namespace MeltDown
             {
                 foreach (var monster in _inRangeMonsterController.ToList())
                 {
+                    if (monster == null) break;
                     monster.GetDamage(_holderCharacter.Character.Atk, _weapon.Power);
                     KnockBackHelper.Knockback(GameViewController.Instance.Player.transform, monster.GetComponent<Rigidbody2D>(), _weapon.KnockBackForce);
                 }

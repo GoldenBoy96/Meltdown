@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _alertIconPrefab: {fileID: 3053408473036560424, guid: 6fb7e71d8bfd96d4286ce036436c7ea0, type: 3}
+  _alertIconSprite: {fileID: 21300000, guid: d2adfbced7e66284c9f63ea21ecc3f5b, type: 3}
+  _winGamePanel: {fileID: 0}
 --- !u!58 &2130149304653165880
 CircleCollider2D:
   m_ObjectHideFlags: 0

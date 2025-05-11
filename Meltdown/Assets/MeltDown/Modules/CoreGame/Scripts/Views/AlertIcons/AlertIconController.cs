@@ -9,10 +9,10 @@ public class AlertIconController : MonoBehaviour
 {
     public const float opacityLevel0 = 0.0f;
     public const float opacityLevel1 = 0.1f;
-    public const float opacityLevel2 = 0.2f;
-    public const float opacityLevel3 = 0.3f;
-    public const float opacityLevel4 = 0.4f;
-    public const float opacityLevel5 = 0.5f;
+    public const float opacityLevel2 = 0.25f;
+    public const float opacityLevel3 = 0.5f;
+    public const float opacityLevel4 = 0.75f;
+    public const float opacityLevel5 = 1f;
 
     public const float distanceLevel1 = 25;
     public const float distanceLevel2 = 20;

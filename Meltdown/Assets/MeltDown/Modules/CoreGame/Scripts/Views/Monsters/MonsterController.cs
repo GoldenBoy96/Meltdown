@@ -105,6 +105,7 @@ namespace MeltDown
             if (_monster.Hp <= 0)
             {
                 _monster.Hp = 0;
+                Destroy(_alert.gameObject);
                 if (_deadCoroutine == null) StartCoroutine(DeadCoroutine());
             }
             if (_monster.Hp > _monster.MaxHp) _monster.Hp = _monster.MaxHp;
