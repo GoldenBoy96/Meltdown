@@ -69,6 +69,7 @@ namespace MeltDown
             _isAttacking = true;
             _spriteRenderer.transform.DOLocalJump(_spriteRenderer.transform.localPosition, 1, 1, 0.3f);
             yield return new WaitForSeconds(0.3f);
+            if (_chasingIcecream == null) yield break;
             _chasingIcecream.GetDamage(_monster.Atk, _monster.AttackPower);
             CooldownAttack();
 
