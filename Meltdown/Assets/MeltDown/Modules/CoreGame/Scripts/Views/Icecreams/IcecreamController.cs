@@ -68,8 +68,9 @@ namespace MeltDown
                     {
                         _icecream.Hp = 0;
                         Debug.Log("Lose Game");
-
-                         _loseGamePanel.SetActive(true);
+                        GameViewController.Instance.SetCameraFollower(GameViewController.Instance.EndPoint);
+                        GameViewController.Instance.EndPoint.GetComponent<EndPointController>().SetResult(Result.Lose);
+                        if (_delayEndGamePanelCoroutine == null) StartCoroutine(DelayEndGamePanelCoroutine(Result.Lose));
                         AudioManager.Instance.PlaySound("lose");
                         AudioManager.Instance.StopMusic();
                         _isLose = true;
@@ -77,6 +78,20 @@ namespace MeltDown
 
                     if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
                 }
+            }
+        }
+
+        private Coroutine _delayEndGamePanelCoroutine;
+        IEnumerator DelayEndGamePanelCoroutine(Result result)
+        {
+            yield return new WaitForSeconds(2);
+            switch (result)
+            {
+                case Result.Win:
+                    break;
+                case Result.Lose:
+                    _loseGamePanel.SetActive(true);
+                    break;
             }
         }
 
@@ -131,6 +146,7 @@ namespace MeltDown
 
         IEnumerator MeltDownCoroutine()
         {
+            if (_isLose) yield break;
             yield return new WaitForSeconds(0.1f);
             if (_isMeltDown)
             {
@@ -138,7 +154,9 @@ namespace MeltDown
                 if (_icecream.Hp < 0)
                 {
                     _icecream.Hp = 0;
+                    GameViewController.Instance.SetCameraFollower(GameViewController.Instance.EndPoint);
                     Debug.Log("Lose Game");
+                    GameViewController.Instance.EndPoint.GetComponent<EndPointController>().SetResult(Result.Win);
                 }
                 if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
             }
