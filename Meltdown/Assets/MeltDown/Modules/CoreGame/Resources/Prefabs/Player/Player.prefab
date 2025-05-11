@@ -105,6 +105,7 @@ MonoBehaviour:
     _spe: 0
   _gameViewController: {fileID: 0}
   _icecream: {fileID: 0}
+  _tutorialPanels: []
 --- !u!212 &778346591415221757
 SpriteRenderer:
   m_ObjectHideFlags: 0
