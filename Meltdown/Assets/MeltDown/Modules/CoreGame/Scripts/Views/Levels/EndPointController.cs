@@ -31,7 +31,7 @@ public class EndPointController : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         var player = collision.gameObject.GetComponent<CharacterController>();
-        if (collision.name == "Player")
+        if (collision.name == "Player" && collision.gameObject.GetComponent<CharacterController>().hasIcecream())
         {
             Debug.Log("Win Game");
             Time.timeScale = 0f;

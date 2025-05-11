@@ -34,7 +34,7 @@ namespace MeltDown
 
         [Header("Tutorial Panel")]
         [SerializeField] private List<GameObject> _tutorialPanels;
-        private int _tutorialIndex = 0; 
+        private int _tutorialIndex = 0;
         private bool _isInTutorial = false;
 
 
@@ -158,6 +158,11 @@ namespace MeltDown
             _weapon.transform.localPosition = Vector3.zero;
             _weapon.Init(this, GameViewController.Instance);
             _weapon.PickUp(this);
+        }
+
+        public bool hasIcecream()
+        {
+            return _icecream != null;
         }
 
         [ContextMenu("DropIcecream")]
