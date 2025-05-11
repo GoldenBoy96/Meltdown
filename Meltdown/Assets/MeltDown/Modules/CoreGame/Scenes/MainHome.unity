@@ -889,6 +889,22 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 36
       objectReference: {fileID: 0}
+    - target: {fileID: 6137589760663300001, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6137589760663300001, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419643510409946423, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419643510409946423, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6552887861381414928, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1048,6 +1064,14 @@ PrefabInstance:
     - target: {fileID: 7781840538895573225, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -1340
+      objectReference: {fileID: 0}
+    - target: {fileID: 7820719457958599569, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7820719457958599569, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7902443520142926258, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: m_AnchorMax.y
