@@ -32,12 +32,13 @@ public class AlertIconController : MonoBehaviour
         SetOpacity(opacityLevel0);
     }
 
-    public void Init(Transform target, RectTransform canvasRect, RectTransform indicatorUI)
+    public void Init(Transform target, RectTransform canvasRect, RectTransform indicatorUI, Sprite indicatorSprite)
     {
         this.target = target;
         mainCamera = Camera.main;
         this.canvasRect = canvasRect;
         this.indicatorUI = indicatorUI;
+        this.indicatorImage.sprite = indicatorSprite;
     }
     void Update()
     {

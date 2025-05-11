@@ -11,6 +11,7 @@ public class EndPointController : MonoBehaviour
 
     [Header("Prefab")]
     [SerializeField] AlertIconController _alertIconPrefab;
+    [SerializeField] Sprite _alertIconSprite;
 
     [SerializeField] private GameObject _winGamePanel;
     private UIManager _uiManager;
@@ -20,7 +21,7 @@ public class EndPointController : MonoBehaviour
         _uiManager = FindObjectOfType<UIManager>();
 
         var alert = Instantiate(_alertIconPrefab.gameObject, GameViewController.Instance.AlertRect.transform);
-        alert.GetComponent<AlertIconController>().Init(transform, GameViewController.Instance.AlertRect, alert.GetComponent<RectTransform>());
+        alert.GetComponent<AlertIconController>().Init(transform, GameViewController.Instance.AlertRect, alert.GetComponent<RectTransform>(), _alertIconSprite);
         if (_winGamePanel != null)
         {
             _winGamePanel.SetActive(false);

@@ -17,6 +17,7 @@ namespace MeltDown
         [SerializeField] protected RectTransform _alert;
         [SerializeField] HealthBarController _healthBar;
         [SerializeField] protected SpriteRenderer _spriteRenderer;
+        [SerializeField] Sprite _alertIconSprite;
 
         [Header("Runtime Data")]
         [SerializeField] protected Monster _monster;
@@ -37,7 +38,7 @@ namespace MeltDown
         {
             _gameViewController = gameViewController;
             _alert = Instantiate(_gameViewController.AlertIconPrefab, _gameViewController.AlertRect.transform);
-            _alert.GetComponent<AlertIconController>().Init(transform, _gameViewController.AlertRect, _alert);
+            _alert.GetComponent<AlertIconController>().Init(transform, _gameViewController.AlertRect, _alert, _alertIconSprite);
         }
 
         public void Update()

@@ -2016,6 +2016,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2450889363514001705}
+  - component: {fileID: 4354766058129570425}
   m_Layer: 0
   m_Name: Endpoint
   m_TagString: Untagged
@@ -2038,6 +2039,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 746496268444051729}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4354766058129570425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327935809451756585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 737b334ca040c494398a5253599513a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _alertIconPrefab: {fileID: 3053408473036560424, guid: 6fb7e71d8bfd96d4286ce036436c7ea0, type: 3}
+  _alertIconSprite: {fileID: 21300000, guid: d2adfbced7e66284c9f63ea21ecc3f5b, type: 3}
+  _winGamePanel: {fileID: 0}
 --- !u!1 &6436315618867342317
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ namespace MeltDown
         [Header("Child Component")]
         [SerializeField] HealthBarController _healthBar;
         [SerializeField] HealthBarController _pickUpCircle;
+        [SerializeField] Sprite _alertIconSprite;
 
         [Header("Runtime Data")]
         [SerializeField] Icecream _icecream;
@@ -48,7 +49,7 @@ namespace MeltDown
             if (_holderCharacter == null) _enablePickUp = true;
             else _enablePickUp = false;
             var alert = Instantiate(_alertIconPrefab.gameObject, GameViewController.Instance.AlertRect.transform);
-            alert.GetComponent<AlertIconController>().Init(transform, GameViewController.Instance.AlertRect, alert.GetComponent<RectTransform>());
+            alert.GetComponent<AlertIconController>().Init(transform, GameViewController.Instance.AlertRect, alert.GetComponent<RectTransform>(), _alertIconSprite);
         }
 
         public void GetDamage(float atk, float power)
