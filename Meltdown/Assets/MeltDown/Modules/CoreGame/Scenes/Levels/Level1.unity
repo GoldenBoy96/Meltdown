@@ -2996,7 +2996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3744493751938006068, guid: a97814922bd817044adc6cf5719d5cbc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5430604225484061222, guid: a97814922bd817044adc6cf5719d5cbc, type: 3}
       propertyPath: m_SortingOrder
@@ -3141,8 +3141,8 @@ MonoBehaviour:
   _audioDataSO: {fileID: 11400000, guid: 7e9fd8c50cfd7bc439e7205e302670dc, type: 2}
   _soundList: []
   _musicList: []
-  _isEnableSound: 0
-  _isEnableMusic: 0
+  _isEnableSound: 1
+  _isEnableMusic: 1
   _isEnableVibrate: 0
   _masterVolume: 0.5
   _soundVolume: 0.5
@@ -3615,6 +3615,10 @@ PrefabInstance:
     - target: {fileID: 3335088018299507224, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372402864743086614, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3633591726959415056, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
       propertyPath: _pickUpTime
