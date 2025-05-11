@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdateLevelButtons()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 4);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 5);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
