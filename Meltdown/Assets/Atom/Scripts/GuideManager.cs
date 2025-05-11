@@ -7,10 +7,6 @@ public class GuideManager : MonoBehaviour
 {
     [SerializeField] private GameObject _guidePanel;
 
-    private Button openButton;
-    private Button _closeButton;
-
-
     public void OpenPanelGuide()
     {
         _guidePanel.SetActive(true);
@@ -20,6 +16,4 @@ public class GuideManager : MonoBehaviour
     {
         _guidePanel.SetActive(false);
     }
-
-
 }

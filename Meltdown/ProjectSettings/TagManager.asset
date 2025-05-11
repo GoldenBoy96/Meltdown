@@ -8,6 +8,7 @@ TagManager:
   - Monster
   - Icecream
   - Tutorial
+  - PointCheckGuide
   layers:
   - Default
   - TransparentFX
