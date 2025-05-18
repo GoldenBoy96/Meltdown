@@ -110207,7 +110207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7477070307070292113, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
       propertyPath: zoomOutSize
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7628295559183228289, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
       propertyPath: m_LocalPosition.x
@@ -110380,7 +110380,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8851886923755358094, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
       insertIndex: -1
       addedObject: {fileID: 377604732}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4644098933249770999, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 960750725}
   m_SourcePrefab: {fileID: 100100000, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
 --- !u!224 &960750720 stripped
 RectTransform:
@@ -110402,6 +110405,107 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 746496268444051729, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
   m_PrefabInstance: {fileID: 960750719}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &960750724 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4644098933249770999, guid: 29bb8db2fb0345b40be0f956d3ab5e23, type: 3}
+  m_PrefabInstance: {fileID: 960750719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &960750725
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960750724}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2ea41a104e7f6dd4c9e42a1b7fc8d72a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &977533521 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5567737876922986787, guid: b06485d046d48bb46bc3db6f3a300718, type: 3}
@@ -112351,6 +112455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1462354600}
   - component: {fileID: 1462354601}
+  - component: {fileID: 1462354602}
   m_Layer: 0
   m_Name: Lake1
   m_TagString: Untagged
@@ -112424,6 +112529,18 @@ PolygonCollider2D:
       - {x: 0.9721066, y: -0.35198665}
       - {x: 0.96144295, y: 1.4619784}
   m_UseDelaunayMesh: 0
+--- !u!114 &1462354602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462354599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1494547243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113642,6 +113759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1772151617}
   - component: {fileID: 1772151618}
+  - component: {fileID: 1772151619}
   m_Layer: 0
   m_Name: Lake2
   m_TagString: Untagged
@@ -113737,6 +113855,18 @@ PolygonCollider2D:
       - {x: 1.5319793, y: 5.746069}
       - {x: 1.5362215, y: 6.8208523}
   m_UseDelaunayMesh: 0
+--- !u!114 &1772151619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772151616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1815890251
 GameObject:
   m_ObjectHideFlags: 0
@@ -113747,6 +113877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1815890252}
   - component: {fileID: 1815890253}
+  - component: {fileID: 1815890254}
   m_Layer: 0
   m_Name: Lake3
   m_TagString: Untagged
@@ -113821,6 +113952,18 @@ PolygonCollider2D:
       - {x: 0.9348537, y: -0.8721216}
       - {x: 0.9089875, y: 1.0241871}
   m_UseDelaunayMesh: 0
+--- !u!114 &1815890254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815890251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1867306889
 PrefabInstance:
   m_ObjectHideFlags: 0
