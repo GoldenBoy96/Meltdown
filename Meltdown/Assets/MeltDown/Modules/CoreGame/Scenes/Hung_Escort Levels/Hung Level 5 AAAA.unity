@@ -168,6 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &847798
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -311,6 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &18357345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -943,6 +945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &242205846
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1313,6 +1316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &408357927
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1456,6 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &426751804
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1666,6 +1671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &454801841
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2266,6 +2272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &682963353
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2543,6 +2550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &712202783
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2868,6 +2876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &823821237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3103,6 +3112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &939659884
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3542,6 +3552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &999137480
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4286,6 +4297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &1424928518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4530,6 +4542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &1477324123
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64590,6 +64603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &1597972213
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64831,6 +64845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &1694123054
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -64974,6 +64989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &1818450170
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -103345,7 +103361,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -103571,6 +103587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &2042168286
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -103714,6 +103731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &2083413026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -104389,6 +104407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 0}
 --- !u!61 &2130293459
 BoxCollider2D:
   m_ObjectHideFlags: 0
