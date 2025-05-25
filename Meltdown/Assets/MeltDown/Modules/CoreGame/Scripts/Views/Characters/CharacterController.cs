@@ -32,6 +32,8 @@ namespace MeltDown
         [SerializeField] IcecreamController _icecream;
         //[SerializeField] IcecreamController _weapon;
 
+        [SerializeField] bool _isAttackAble = false;
+
         [Header("Tutorial Panel")]
         [SerializeField] private List<GameObject> _tutorialPanels;
         private int _tutorialIndex = 0;
@@ -43,8 +45,10 @@ namespace MeltDown
 
         public Character Character { get => _character; private set => _character = value; }
         public IcecreamController Icecream { get => _icecream; private set => _icecream = value; }
-        
+
         public Vector2 MoveInput => _moveInput;
+
+        public bool IsAttackAble { get => _isAttackAble; private set => _isAttackAble = value; }
 
         void Start()
         {
@@ -78,9 +82,9 @@ namespace MeltDown
 
         void FixedUpdate()
         {
-                HandleMovement();
-                HandleWeaponMovement();
-                FlipCharacter();
+            HandleMovement();
+            HandleWeaponMovement();
+            FlipCharacter();
         }
 
         // Xử lý di chuyển nhân vật
@@ -90,11 +94,13 @@ namespace MeltDown
             _moveInput = new Vector2(_joystick.Horizontal, _joystick.Vertical).normalized;
             if (_moveInput != Vector2.zero)
             {
+                _isAttackAble = true;
                 _rb.AddForce(_moveInput * Character.Spe / 100, ForceMode2D.Impulse);
                 AnimatorHelper.PlayAnimation(_animator, CoreGameConstants.Run);
             }
             else
             {
+                _isAttackAble = false;
                 AnimatorHelper.PlayAnimation(_animator, CoreGameConstants.Idle);
                 _rb.totalForce = Vector3.zero;
             }
