@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ae521d2842f6a54380965fd4ae56758, type: 3}
-  m_Name: MonsterSO_Special
+  m_Name: BossSO_ 1
   m_EditorClassIdentifier: 
   _data:
-    _monsterName: Special
-    _description: Will focus on the player instead of the icecream
-    _maxHp: 50
-    _hp: 50
+    _monsterName: Default
+    _description: Just a default monster
+    _maxHp: 30
+    _hp: 30
     _atk: 1
     _def: 1
-    _spe: 110
-    _maxDectetionRange: 10
-    _minDectetionRange: 0.5
-    _attackRange: 0.6
-    _attackPower: 1
-    _attackCooldown: 0.6
+    _spe: 70
+    _maxDectetionRange: 7
+    _minDectetionRange: 0.4
+    _attackRange: 0.5
+    _attackPower: 10
+    _attackCooldown: 1.2
