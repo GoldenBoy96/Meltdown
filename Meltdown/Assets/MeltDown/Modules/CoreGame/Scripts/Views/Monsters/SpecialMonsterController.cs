@@ -90,7 +90,7 @@ namespace MeltDown
             Vector3 tmpLocalPosition = _spriteRenderer.transform.localPosition;
             _spriteRenderer.transform.DOLocalJump(tmpLocalPosition, 1, 1, 0.3f);
             yield return new WaitForSeconds(0.3f);
-            KnockBackHelper.Knockback(transform, _player.GetComponent<Rigidbody2D>(), 5);
+            KnockBackHelper.Knockback(transform, _player.GetComponent<Rigidbody2D>(), 20);
             CooldownAttack();
 
             Vector3 direction = (_player.transform.position - (Vector3)_rb.position).normalized;
