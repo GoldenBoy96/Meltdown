@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using DG.Tweening;
 using MeltDown.Modules.CoreGame.Scripts.Views;
+using OurUtils;
 using UnityEngine;
 
 namespace MeltDown
@@ -11,6 +12,7 @@ namespace MeltDown
     {
         [Header("Init Data")]
         [SerializeField] protected MonsterSO _monsterSO;
+        [SerializeField] protected float _itemDropRatePercent = 100;
 
         [Header("Child Component")]
         [SerializeField] protected Rigidbody2D _rb;
@@ -19,6 +21,7 @@ namespace MeltDown
         [SerializeField] HealthBarController _healthBar;
         [SerializeField] protected SpriteRenderer _spriteRenderer;
         [SerializeField] Sprite _alertIconSprite;
+        [SerializeField] ItemHealthOrbController _dropItemPrefab;
 
         [Header("Runtime Data")]
         [SerializeField] protected Monster _monster;
@@ -105,10 +108,19 @@ namespace MeltDown
             if (_monster.Hp <= 0)
             {
                 _monster.Hp = 0;
-                Destroy(_alert.gameObject);
+                if (_alert.gameObject != null) Destroy(_alert.gameObject);
                 if (_deadCoroutine == null) StartCoroutine(DeadCoroutine());
             }
             if (_monster.Hp > _monster.MaxHp) _monster.Hp = _monster.MaxHp;
+
+            // Drop item when hit
+            float dropItemRandom = Random.Range(0, 100);
+            if (dropItemRandom < _itemDropRatePercent)
+            {
+                var dropItem = Instantiate(_dropItemPrefab.gameObject, transform);
+                dropItem.transform.localPosition = Vector3.zero;
+                dropItem.transform.SetParent(transform.parent);
+            }
         }
 
         IEnumerator DeadCoroutine()
