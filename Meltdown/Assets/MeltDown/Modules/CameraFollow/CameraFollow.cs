@@ -21,6 +21,11 @@ public class CameraFollow : MonoBehaviour
         cam = Camera.main;
     }
 
+    public void SetFollower(Transform follower)
+    {
+        followTransform = follower;
+    }
+
     void LateUpdate()
     {
         // Camera follow position

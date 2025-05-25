@@ -20,6 +20,7 @@ namespace MeltDown.Modules.CoreGame.Scripts.Views
         [SerializeField] RectTransform _alertRect;
         [SerializeField] Camera _mainCam;
         [SerializeField] List<Canvas> _canvasToSetCamera = new();
+        [SerializeField] CameraFollow _cameraFollow;
 
         [Header("Runtime Component")]
         [SerializeField] CharacterController _player;
@@ -32,6 +33,7 @@ namespace MeltDown.Modules.CoreGame.Scripts.Views
         public RectTransform AlertIconPrefab { get => _alertIconPrefab; set => _alertIconPrefab = value; }
         public RectTransform AlertRect { get => _alertRect; set => _alertRect = value; }
         public Camera MainCam { get => _mainCam; set => _mainCam = value; }
+        public Transform EndPoint { get => _endPoint; set => _endPoint = value; }
 
         private void Start()
         {
@@ -42,6 +44,7 @@ namespace MeltDown.Modules.CoreGame.Scripts.Views
             {
                 canvas.worldCamera = _mainCam;
             }
+            _cameraFollow = _player.gameObject.GetComponent<CameraFollow>();
             StartCoroutine(WaitThenPlayBgMusic());
         }
 
@@ -62,5 +65,10 @@ namespace MeltDown.Modules.CoreGame.Scripts.Views
             // AudioManager.Instance.StopMusic();
 
         }
+
+        public void SetCameraFollower(Transform follower)
+        {
+            _cameraFollow.SetFollower(follower);
+        }    
     }
 }

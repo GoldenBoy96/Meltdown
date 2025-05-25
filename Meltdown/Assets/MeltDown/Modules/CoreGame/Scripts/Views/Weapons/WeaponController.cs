@@ -65,7 +65,7 @@ namespace MeltDown
 
         public void TryAttack()
         {
-            if (_isAttackable && _inRangeMonsterController.Count > 0)
+            if (_holderCharacter != null && _holderCharacter.IsAttackAble && _isAttackable && _inRangeMonsterController.Count > 0)
             {
                 foreach (var monster in _inRangeMonsterController.ToList())
                 {

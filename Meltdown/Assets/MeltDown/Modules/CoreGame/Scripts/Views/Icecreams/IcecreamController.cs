@@ -137,6 +137,7 @@ namespace MeltDown
 
         IEnumerator MeltDownCoroutine()
         {
+            if (_isLose) yield break;
             yield return new WaitForSeconds(0.1f);
             if (_isMeltDown)
             {
@@ -144,6 +145,7 @@ namespace MeltDown
                 if (_icecream.Hp < 0)
                 {
                     _icecream.Hp = 0;
+                    GameViewController.Instance.SetCameraFollower(GameViewController.Instance.EndPoint);
                     Debug.Log("Lose Game");
                     OnLoseGame();
                 }
