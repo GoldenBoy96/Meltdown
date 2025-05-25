@@ -160,6 +160,11 @@ namespace MeltDown
             _weapon.PickUp(this);
         }
 
+        public bool hasIcecream()
+        {
+            return _icecream != null;
+        }
+
         [ContextMenu("DropIcecream")]
         public void DropIcecream()
         {

@@ -68,16 +68,22 @@ namespace MeltDown
                     {
                         _icecream.Hp = 0;
                         Debug.Log("Lose Game");
-
-                         _loseGamePanel.SetActive(true);
-                        AudioManager.Instance.PlaySound("lose");
-                        AudioManager.Instance.StopMusic();
-                        _isLose = true;
+                         OnLoseGame();
                     }
 
                     if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
                 }
             }
+        }
+
+        public void OnLoseGame()
+        {
+            Time.timeScale = 0f;
+
+            _isLose = true;
+            _loseGamePanel.SetActive(true);
+            AudioManager.Instance.PlaySound("lose");
+            AudioManager.Instance.StopMusic();
         }
 
         private void Update()
@@ -139,6 +145,7 @@ namespace MeltDown
                 {
                     _icecream.Hp = 0;
                     Debug.Log("Lose Game");
+                    OnLoseGame();
                 }
                 if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
             }
