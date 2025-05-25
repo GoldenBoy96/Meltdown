@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class MonsterExecutionArea : MonoBehaviour
 {
+    [SerializeField] private GameObject particleEffect;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Monster"))
@@ -13,6 +14,10 @@ public class MonsterExecutionArea : MonoBehaviour
             if (monster != null)
             {
                 monster.GetDamage(9999, 9999);
+                if (particleEffect != null)
+                {
+                    Instantiate(particleEffect, monster.transform.position, Quaternion.identity);
+                }
             }
         }
     }

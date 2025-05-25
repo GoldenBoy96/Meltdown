@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &27721287
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30476,6 +30477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &60034718
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30737,6 +30739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &176930432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31313,6 +31316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &389028918
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32580,6 +32584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &686865281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32918,6 +32923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &765628041
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -78684,6 +78690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &1078821478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -79196,6 +79203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &1394351240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -79452,6 +79460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &1500299876
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -79611,6 +79620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &1548059190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -80182,6 +80192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &1842081778
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -80922,6 +80933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &1871594765
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81179,6 +81191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &2047718684
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81322,6 +81335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &2058350340
 BoxCollider2D:
   m_ObjectHideFlags: 0
