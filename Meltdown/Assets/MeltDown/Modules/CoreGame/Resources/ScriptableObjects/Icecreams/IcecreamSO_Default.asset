@@ -18,5 +18,5 @@ MonoBehaviour:
     _maxHp: 100
     _hp: 100
     _def: 1
-    _meltDownPerSecond: 0.5
+    _meltDownPerSecond: 2
     _pickUpTime: 1.5

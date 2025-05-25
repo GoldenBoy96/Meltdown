@@ -15,8 +15,8 @@ MonoBehaviour:
   _data:
     _monsterName: Special
     _description: Will focus on the player instead of the icecream
-    _maxHp: 70
-    _hp: 70
+    _maxHp: 50
+    _hp: 50
     _atk: 1
     _def: 1
     _spe: 85

@@ -19,4 +19,4 @@ MonoBehaviour:
     _hp: 500
     _atk: 1
     _def: 1
-    _spe: 90
+    _spe: 100
