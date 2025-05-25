@@ -88,7 +88,7 @@ namespace MeltDown
                     _isAttacking = false;
                     yield break;
                 }
-                if (Vector2.Distance(_chasingIcecream.transform.position, transform.position) < 1)
+                if (Vector2.Distance(_chasingIcecream.transform.position, transform.position) < .5)
                 {
                     _chasingIcecream.GetDamage(_monster.Atk, _monster.AttackPower);
                 }
