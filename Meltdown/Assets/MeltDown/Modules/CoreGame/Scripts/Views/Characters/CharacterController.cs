@@ -45,7 +45,7 @@ namespace MeltDown
 
         public Character Character { get => _character; private set => _character = value; }
         public IcecreamController Icecream { get => _icecream; private set => _icecream = value; }
-        
+
         public Vector2 MoveInput => _moveInput;
 
         public bool IsAttackAble { get => _isAttackAble; private set => _isAttackAble = value; }
@@ -82,9 +82,9 @@ namespace MeltDown
 
         void FixedUpdate()
         {
-                HandleMovement();
-                HandleWeaponMovement();
-                FlipCharacter();
+            HandleMovement();
+            HandleWeaponMovement();
+            FlipCharacter();
         }
 
         // Xử lý di chuyển nhân vật
