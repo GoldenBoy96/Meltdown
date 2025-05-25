@@ -32,6 +32,7 @@ namespace MeltDown.Modules.CoreGame.Scripts.Views
         public RectTransform AlertIconPrefab { get => _alertIconPrefab; set => _alertIconPrefab = value; }
         public RectTransform AlertRect { get => _alertRect; set => _alertRect = value; }
         public Camera MainCam { get => _mainCam; set => _mainCam = value; }
+        public Transform EndPoint { get => _endPoint; set => _endPoint = value; }
 
         private void Start()
         {

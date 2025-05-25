@@ -68,7 +68,11 @@ namespace MeltDown
                     {
                         _icecream.Hp = 0;
                         Debug.Log("Lose Game");
-                         OnLoseGame();
+                        GameViewController.Instance.EndPoint.GetComponent<EndPointController>().SetResult(Result.Lose);
+                        if (_delayEndGamePanelCoroutine == null) StartCoroutine(DelayEndGamePanelCoroutine(Result.Lose));
+                        AudioManager.Instance.PlaySound("lose");
+                        AudioManager.Instance.StopMusic();
+                        _isLose = true;
                     }
 
                     if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
@@ -76,14 +80,18 @@ namespace MeltDown
             }
         }
 
-        public void OnLoseGame()
+        private Coroutine _delayEndGamePanelCoroutine;
+        IEnumerator DelayEndGamePanelCoroutine(Result result)
         {
-            Time.timeScale = 0f;
-
-            _isLose = true;
-            _loseGamePanel.SetActive(true);
-            AudioManager.Instance.PlaySound("lose");
-            AudioManager.Instance.StopMusic();
+            yield return new WaitForSeconds(2);
+            switch (result)
+            {
+                case Result.Win:
+                    break;
+                case Result.Lose:
+                    _loseGamePanel.SetActive(true);
+                    break;
+            }
         }
 
         private void Update()
@@ -137,6 +145,7 @@ namespace MeltDown
 
         IEnumerator MeltDownCoroutine()
         {
+            if (_isLose) yield break;
             yield return new WaitForSeconds(0.1f);
             if (_isMeltDown)
             {
@@ -145,7 +154,7 @@ namespace MeltDown
                 {
                     _icecream.Hp = 0;
                     Debug.Log("Lose Game");
-                    OnLoseGame();
+                    GameViewController.Instance.EndPoint.GetComponent<EndPointController>().SetResult(Result.Win);
                 }
                 if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
             }

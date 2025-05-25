@@ -28,7 +28,7 @@ public class PauseUIManager : MonoBehaviour
     public void HomeGame()
     {
         Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 
     public void ResumeGame()

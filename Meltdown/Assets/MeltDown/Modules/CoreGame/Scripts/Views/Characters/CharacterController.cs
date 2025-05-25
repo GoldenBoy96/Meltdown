@@ -32,6 +32,8 @@ namespace MeltDown
         [SerializeField] IcecreamController _icecream;
         //[SerializeField] IcecreamController _weapon;
 
+        [SerializeField] bool _isAttackAble = false;
+
         [Header("Tutorial Panel")]
         [SerializeField] private List<GameObject> _tutorialPanels;
         private int _tutorialIndex = 0;
@@ -45,6 +47,8 @@ namespace MeltDown
         public IcecreamController Icecream { get => _icecream; private set => _icecream = value; }
         
         public Vector2 MoveInput => _moveInput;
+
+        public bool IsAttackAble { get => _isAttackAble; private set => _isAttackAble = value; }
 
         void Start()
         {
@@ -90,11 +94,13 @@ namespace MeltDown
             _moveInput = new Vector2(_joystick.Horizontal, _joystick.Vertical).normalized;
             if (_moveInput != Vector2.zero)
             {
+                _isAttackAble = true;
                 _rb.AddForce(_moveInput * Character.Spe / 100, ForceMode2D.Impulse);
                 AnimatorHelper.PlayAnimation(_animator, CoreGameConstants.Run);
             }
             else
             {
+                _isAttackAble = false;
                 AnimatorHelper.PlayAnimation(_animator, CoreGameConstants.Idle);
                 _rb.totalForce = Vector3.zero;
             }
@@ -158,11 +164,6 @@ namespace MeltDown
             _weapon.transform.localPosition = Vector3.zero;
             _weapon.Init(this, GameViewController.Instance);
             _weapon.PickUp(this);
-        }
-
-        public bool hasIcecream()
-        {
-            return _icecream != null;
         }
 
         [ContextMenu("DropIcecream")]
