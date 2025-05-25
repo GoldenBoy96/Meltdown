@@ -108,7 +108,7 @@ namespace MeltDown
             if (_monster.Hp <= 0)
             {
                 _monster.Hp = 0;
-                if (_alert.gameObject != null) Destroy(_alert.gameObject);
+                if (_alert != null) Destroy(_alert.gameObject);
                 if (_deadCoroutine == null) StartCoroutine(DeadCoroutine());
             }
             if (_monster.Hp > _monster.MaxHp) _monster.Hp = _monster.MaxHp;
@@ -125,8 +125,8 @@ namespace MeltDown
 
         IEnumerator DeadCoroutine()
         {
-            _spriteRenderer.DOFade(0, 0.5f);
-            yield return new WaitForSeconds(0.5f);
+            _spriteRenderer.DOFade(0, 1f);
+            yield return new WaitForSeconds(1f);
             Destroy(gameObject);
         }
         private void OnDestroy()

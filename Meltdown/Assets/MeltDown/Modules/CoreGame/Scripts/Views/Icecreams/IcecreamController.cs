@@ -173,7 +173,6 @@ namespace MeltDown
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            Debug.Log("OnTriggerExit2D");
             collision.TryGetComponent<CharacterController>(out var player);
             if (player != null)
             {

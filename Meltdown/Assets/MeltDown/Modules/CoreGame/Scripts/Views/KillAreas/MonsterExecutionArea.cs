@@ -1,25 +1,27 @@
-using MeltDown;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterExecutionArea : MonoBehaviour
+namespace MeltDown
 {
-    [SerializeField] private GameObject particleEffect;
-    private void OnTriggerEnter2D(Collider2D collision)
+    public class MonsterExecutionArea : MonoBehaviour
     {
-        if (collision.CompareTag("Monster"))
+        [SerializeField] private GameObject particleEffect;
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            var monster = collision.GetComponentInParent<MonsterController>();
-            if (monster != null)
+            if (collision.CompareTag("Monster"))
             {
-                monster.GetDamage(9999, 9999);
-                if (particleEffect != null)
+                var monster = collision.GetComponentInParent<MonsterController>();
+                if (monster != null)
                 {
-                    Instantiate(particleEffect, monster.transform.position, Quaternion.identity);
+                    monster.GetDamage(9999, 9999);
+                    if (particleEffect != null)
+                    {
+                        Instantiate(particleEffect, monster.transform.position, Quaternion.identity);
+                    }
                 }
             }
         }
-    }
 
+    }
 }
