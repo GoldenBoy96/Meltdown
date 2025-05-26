@@ -801,6 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &189215424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -946,6 +947,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992016542170465913, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
+      propertyPath: _itemDropRatePercent
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4758882872770465313, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1089,6 +1094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &233825787
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1301,6 +1307,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992016542170465913, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
+      propertyPath: _itemDropRatePercent
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4758882872770465313, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1400,6 +1410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &293239762
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1923,6 +1934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &502374271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2330,6 +2342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &647825590
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2473,6 +2486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &657785904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2616,6 +2630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &696677412
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2865,6 +2880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &921797724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3008,6 +3024,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &923167571
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3237,6 +3254,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 990815098139226031, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992016542170465913, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
+      propertyPath: _itemDropRatePercent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4758882872770465313, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
@@ -48982,6 +49003,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992016542170465913, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
+      propertyPath: _itemDropRatePercent
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4758882872770465313, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -49217,6 +49242,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992016542170465913, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
+      propertyPath: _itemDropRatePercent
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4758882872770465313, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -49316,6 +49345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &1326362124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49858,6 +49888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &1538561231
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50114,6 +50145,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2992016542170465913, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
+      propertyPath: _itemDropRatePercent
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4758882872770465313, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -50213,6 +50248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &1600927748
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50356,6 +50392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &1641631328
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50721,6 +50758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ccdbde6629d2af4b8be997a3afae604, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleEffect: {fileID: 1589352521885493956, guid: 5a52090d32bd392488c9cad0db9abe2c, type: 3}
 --- !u!61 &1733932345
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50864,6 +50902,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 990815098139226031, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992016542170465913, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
+      propertyPath: _itemDropRatePercent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4758882872770465313, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
@@ -51543,6 +51585,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 990815098139226031, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992016542170465913, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
+      propertyPath: _itemDropRatePercent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4758882872770465313, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
@@ -81258,6 +81304,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 990815098139226031, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992016542170465913, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
+      propertyPath: _itemDropRatePercent
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4758882872770465313, guid: 55fadd116eb102b46908a0b76772c468, type: 3}
