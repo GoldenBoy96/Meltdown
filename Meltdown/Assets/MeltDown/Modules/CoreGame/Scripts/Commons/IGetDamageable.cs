@@ -1,6 +1,6 @@
 public interface IGetDamageable 
 {
-    public void GetDamage(float atk, float power);
+    public bool GetDamage(float atk, float power);
 
     public static float CalculateTrueDamage(float atk, float power, float def)
     {

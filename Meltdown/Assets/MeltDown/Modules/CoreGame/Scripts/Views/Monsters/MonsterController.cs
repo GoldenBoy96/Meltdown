@@ -102,7 +102,7 @@ namespace MeltDown
         }
 
         private Coroutine _deadCoroutine;
-        public void GetDamage(float atk, float power)
+        public bool GetDamage(float atk, float power)
         {
             _monster.Hp -= IGetDamageable.CalculateTrueDamage(atk, power, _monster.Def);
             if (_monster.Hp <= 0)
@@ -110,6 +110,7 @@ namespace MeltDown
                 _monster.Hp = 0;
                 if (_alert != null) Destroy(_alert.gameObject);
                 if (_deadCoroutine == null) StartCoroutine(DeadCoroutine());
+                return true; // Monster is dead
             }
             if (_monster.Hp > _monster.MaxHp) _monster.Hp = _monster.MaxHp;
 
@@ -121,6 +122,7 @@ namespace MeltDown
                 dropItem.transform.localPosition = Vector3.zero;
                 dropItem.transform.SetParent(transform.parent);
             }
+            return false; // Monster is still alive
         }
 
         IEnumerator DeadCoroutine()

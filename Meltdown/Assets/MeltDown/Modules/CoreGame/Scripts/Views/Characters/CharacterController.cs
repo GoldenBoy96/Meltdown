@@ -39,9 +39,13 @@ namespace MeltDown
         private int _tutorialIndex = 0;
         private bool _isInTutorial = false;
 
-
         private Vector2 _moveInput;
         private bool _isFacingRight = true;
+        private float _cacheSpeed = 0f;
+        private Color _startLerpColor = Color.blue;
+        private Color _endLerpColor = Color.white;
+        private bool _isInSlowdown = false;
+        private SpriteRenderer _ren;
 
         public Character Character { get => _character; private set => _character = value; }
         public IcecreamController Icecream { get => _icecream; private set => _icecream = value; }
@@ -53,7 +57,9 @@ namespace MeltDown
         void Start()
         {
             _rb = GetComponent<Rigidbody2D>();
+            _ren = _characterVisual.GetComponent<SpriteRenderer>();
             Character = _characterSO.Data;
+            _cacheSpeed = Character.Spe;
 
             if (_icecream == null) _icecream = _icecreamHolder.GetComponentInChildren<IcecreamController>();
             if (_icecream != null)
@@ -78,6 +84,14 @@ namespace MeltDown
                 _icecream.Init(this, _gameViewController);
             }
             AnimatorHelper.PlayAnimation(_animator, CoreGameConstants.Idle);
+        }
+
+        private void Update()
+        {
+            if (_isInSlowdown)
+            {
+                _ren.color = Color.Lerp(_startLerpColor, _endLerpColor, Mathf.PingPong(Time.time * 2, 1));
+            }
         }
 
         void FixedUpdate()
@@ -164,6 +178,26 @@ namespace MeltDown
             _weapon.transform.localPosition = Vector3.zero;
             _weapon.Init(this, GameViewController.Instance);
             _weapon.PickUp(this);
+        }
+
+        public void SlowDownByTimes(int times)
+        {
+            Character.Spe /= times;
+            _isInSlowdown = true;
+        }
+
+        public void SlowDownByUnit(float unit)
+        {
+            Character.Spe -= unit;
+            if (Character.Spe < 0) Character.Spe = .5f;
+            _isInSlowdown = true;
+        }
+
+        public void RemoveSlowDown()
+        {
+            Character.Spe = _cacheSpeed;
+            _isInSlowdown = false;
+            _ren.color = Color.white;
         }
 
         [ContextMenu("DropIcecream")]

@@ -103,7 +103,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 990815098139226031}
@@ -149,7 +149,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -245473213, guid: 07a883fe45677fb4385356a580ededea, type: 3}
+  m_Sprite: {fileID: 1111580747, guid: 07a883fe45677fb4385356a580ededea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -170,7 +170,7 @@ Animator:
   m_GameObject: {fileID: 1745035199443764873}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e65b0c490babedd4a80b10a0e3a86c4d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0d3c7a8de44f49f4d9676605524020a7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -249,7 +249,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 1.41
 --- !u!50 &2474964557996779285
 Rigidbody2D:
   serializedVersion: 4
@@ -569,7 +569,7 @@ RectTransform:
   m_GameObject: {fileID: 4333754522570534117}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.40000004, z: 0.40000004}
+  m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7928436358346179171}
@@ -577,7 +577,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.14}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7491287635420939894
@@ -601,7 +601,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &2912555806952329493
 MonoBehaviour:
@@ -654,11 +654,12 @@ GameObject:
   - component: {fileID: 990815098139226031}
   - component: {fileID: 5551716674217969173}
   - component: {fileID: 2992016542170465913}
+  - component: {fileID: 6566826728055019901}
   - component: {fileID: 5113020175096086183}
   - component: {fileID: 7330173102249744729}
   - component: {fileID: 5509086883141846554}
   m_Layer: 0
-  m_Name: AdvancedMonster
+  m_Name: SlowMonster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -743,12 +744,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5350738667686956519}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c8d74f2d94962d4b939b601cb302cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _monsterSO: {fileID: 11400000, guid: 9241e7f89daa4d143bb1faff4e23c348, type: 2}
+  _monsterSO: {fileID: 11400000, guid: bb0c7368b7600784f9b943b5b74ed600, type: 2}
   _itemDropRatePercent: 20
   _rb: {fileID: 5113020175096086183}
   _alertIcon: {fileID: 0}
@@ -756,6 +757,46 @@ MonoBehaviour:
   _healthBar: {fileID: 3826739388555449576}
   _spriteRenderer: {fileID: 5896264805443873636}
   _alertIconSprite: {fileID: 21300000, guid: c49a2229bc24b0848a424d8e1d648bc1, type: 3}
+  _dropItemPrefab: {fileID: 7729739777099510111, guid: f309187721371cc4a8edeccc49a8e277, type: 3}
+  _monster:
+    _monsterName: 
+    _description: 
+    _maxHp: 0
+    _hp: 0
+    _atk: 0
+    _def: 0
+    _spe: 0
+    _maxDectetionRange: 0
+    _minDectetionRange: 0
+    _attackRange: 0
+    _attackPower: 0
+    _attackCooldown: 0
+  _isAttackable: 1
+  _monsterCamp: {fileID: 0}
+  _originalPosition: {x: 0, y: 0, z: 0}
+  _detectionArea: {fileID: 7330173102249744729}
+  _chasingIcecream: {fileID: 0}
+  _isAttacking: 0
+--- !u!114 &6566826728055019901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350738667686956519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f7a6bbcdcc6b047ba18e72ac214840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterSO: {fileID: 11400000, guid: 2e7945f2fd1f66746818c8bb1c015453, type: 2}
+  _itemDropRatePercent: 20
+  _rb: {fileID: 5113020175096086183}
+  _alertIcon: {fileID: 0}
+  _alert: {fileID: 0}
+  _healthBar: {fileID: 3826739388555449576}
+  _spriteRenderer: {fileID: 5896264805443873636}
+  _alertIconSprite: {fileID: 21300000, guid: 718d124ed9c54d24db596ab2fac4959f, type: 3}
   _dropItemPrefab: {fileID: 7729739777099510111, guid: f309187721371cc4a8edeccc49a8e277, type: 3}
   _monster:
     _monsterName: 
@@ -870,9 +911,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.08237982}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.0541911
+  m_Radius: 0.5
 --- !u!1 &5730731950387956575
 GameObject:
   m_ObjectHideFlags: 0

@@ -52,7 +52,7 @@ namespace MeltDown
             alert.GetComponent<AlertIconController>().Init(transform, GameViewController.Instance.AlertRect, alert.GetComponent<RectTransform>(), _alertIconSprite);
         }
 
-        public void GetDamage(float atk, float power)
+        public bool GetDamage(float atk, float power)
         {
             if (!_isLose)
             {
@@ -73,11 +73,13 @@ namespace MeltDown
                         AudioManager.Instance.PlaySound("lose");
                         AudioManager.Instance.StopMusic();
                         _isLose = true;
+                        return true;
                     }
 
                     if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
                 }
             }
+            return false;
         }
 
         private Coroutine _delayEndGamePanelCoroutine;
