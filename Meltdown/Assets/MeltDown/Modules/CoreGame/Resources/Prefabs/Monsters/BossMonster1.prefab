@@ -103,7 +103,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 990815098139226031}
@@ -249,7 +249,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.41
+  m_Radius: 1.53
 --- !u!50 &2474964557996779285
 Rigidbody2D:
   serializedVersion: 4
@@ -569,7 +569,7 @@ RectTransform:
   m_GameObject: {fileID: 4333754522570534117}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7928436358346179171}
@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 7330173102249744729}
   - component: {fileID: 5509086883141846554}
   m_Layer: 0
-  m_Name: DemoMonster
+  m_Name: BossMonster1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -748,7 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8d74f2d94962d4b939b601cb302cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _monsterSO: {fileID: 11400000, guid: bb0c7368b7600784f9b943b5b74ed600, type: 2}
+  _monsterSO: {fileID: 11400000, guid: f71a77d4cc841c34795e05c2698b1fb2, type: 2}
   _itemDropRatePercent: 20
   _rb: {fileID: 5113020175096086183}
   _alertIcon: {fileID: 0}
@@ -837,7 +837,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 10
 --- !u!58 &5509086883141846554
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -975,7 +975,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.5, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 990815098139226031}

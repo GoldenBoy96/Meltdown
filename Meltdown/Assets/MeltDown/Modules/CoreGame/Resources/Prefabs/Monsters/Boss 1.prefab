@@ -639,12 +639,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterSO: {fileID: 11400000, guid: f71a77d4cc841c34795e05c2698b1fb2, type: 2}
+  _itemDropRatePercent: 20
   _rb: {fileID: 5113020175096086183}
   _alertIcon: {fileID: 0}
   _alert: {fileID: 0}
   _healthBar: {fileID: 3826739388555449576}
   _spriteRenderer: {fileID: 5896264805443873636}
   _alertIconSprite: {fileID: 21300000, guid: c49a2229bc24b0848a424d8e1d648bc1, type: 3}
+  _dropItemPrefab: {fileID: 7729739777099510111, guid: f309187721371cc4a8edeccc49a8e277, type: 3}
   _monster:
     _monsterName: 
     _description: 
