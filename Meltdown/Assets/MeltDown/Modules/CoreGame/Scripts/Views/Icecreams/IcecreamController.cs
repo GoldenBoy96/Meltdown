@@ -85,7 +85,7 @@ namespace MeltDown
         private Coroutine _delayEndGamePanelCoroutine;
         IEnumerator DelayEndGamePanelCoroutine(Result result)
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(0.5f);
             switch (result)
             {
                 case Result.Win:
@@ -156,7 +156,11 @@ namespace MeltDown
                 {
                     _icecream.Hp = 0;
                     Debug.Log("Lose Game");
-                    GameViewController.Instance.EndPoint.GetComponent<EndPointController>().SetResult(Result.Win);
+                    GameViewController.Instance.EndPoint.GetComponent<EndPointController>().SetResult(Result.Lose);
+                    if (_delayEndGamePanelCoroutine == null) StartCoroutine(DelayEndGamePanelCoroutine(Result.Lose));
+                    AudioManager.Instance.PlaySound("lose");
+                    AudioManager.Instance.StopMusic();
+                    _isLose = true;
                 }
                 if (_icecream.Hp > _icecream.MaxHp) _icecream.Hp = _icecream.MaxHp;
             }
