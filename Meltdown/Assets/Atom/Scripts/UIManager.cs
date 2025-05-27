@@ -22,13 +22,12 @@ public class UIManager : MonoBehaviour
 
     private void UpdateLevelButtons()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 5);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 9);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
-            int levelIndexTemp = i + 1; // Dùng biến tạm để tránh lỗi Lambda
+            int levelIndexTemp = i + 1;
 
-            // Xóa sự kiện cũ trước khi thêm mới, tránh lỗi click nhiều lần
             levelButtons[i].onClick.RemoveAllListeners();
 
             if (i < unlockedLevel)
@@ -47,7 +46,7 @@ public class UIManager : MonoBehaviour
 
     public void LoadLevel(int levelIndex)
     {
-        string sceneName = "Level" + levelIndex;
+        string sceneName = "Hung Level " + levelIndex;
 
         if (SceneExists(sceneName))
         {
@@ -56,7 +55,7 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"Scene '{sceneName}' not esisted.");
+            Debug.LogError($"Scene '{sceneName}' not existed.");
         }
     }
 

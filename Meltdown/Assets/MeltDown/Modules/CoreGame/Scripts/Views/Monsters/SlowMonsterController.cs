@@ -46,7 +46,7 @@ namespace MeltDown
 
             if (Vector3.Distance(transform.position, _chasingIcecream.transform.position) <= _monster.MinDectetionRange) return;
             Vector3 direction = (_chasingIcecream.transform.position - (Vector3)_rb.position).normalized;
-            Vector3 force = direction * _monster.Spe / 100;
+            Vector3 force = direction * _monster.Spe / 50;
             _rb.AddForce(force, ForceMode2D.Impulse);
         }
 
@@ -70,7 +70,7 @@ namespace MeltDown
             }
             else
             {
-                _spriteRenderer.transform.DOLocalJump(_spriteRenderer.transform.localPosition, 1, 1, 0.3f);
+                //_spriteRenderer.transform.DOLocalJump(_spriteRenderer.transform.localPosition, 1, 1, 0.3f);
 
                 transform.DOMove(_chasingIcecream.transform.position, 0.3f);
 

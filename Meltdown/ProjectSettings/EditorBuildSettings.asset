@@ -11,22 +11,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MeltDown/Modules/CoreGame/Scenes/MainHome.unity
     guid: 7ddb963f62ac1e147a400c5ee167452d
-  - enabled: 0
-    path: Assets/MeltDown/Modules/CoreGame/Scenes/Minh.unity
-    guid: e894c1e69c2e5394690b308fa868cb17
   - enabled: 1
-    path: Assets/MeltDown/Modules/CoreGame/Scenes/Levels/Level1.unity
-    guid: 6f71be569ca558243828eca43e6e4989
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 1.unity
+    guid: 13328deb031f2744797f3d2fdcd39a7e
   - enabled: 1
-    path: Assets/MeltDown/Modules/CoreGame/Scenes/Levels/Level2.unity
-    guid: ef712b737368709458ea3442d3b1569a
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 2.unity
+    guid: d508a9c3a25f6d143ad5311478a350e5
   - enabled: 1
-    path: Assets/MeltDown/Modules/CoreGame/Scenes/Levels/Level3.unity
-    guid: 000027ec78eecb946ab71e9c385c7f9c
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 3.unity
+    guid: 2569a204f667e4f43a270099bc7bc9e9
   - enabled: 1
-    path: Assets/MeltDown/Modules/CoreGame/Scenes/Levels/Level4.unity
-    guid: b07cd5187e8e460458fca08cf4c568e2
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 4.unity
+    guid: cf2b8ebbf4c8c824a893158b17d2f3b5
   - enabled: 1
-    path: Assets/MeltDown/Modules/CoreGame/Scenes/Levels/Level5.unity
-    guid: f0061afac3f70c84b9b3bd3e328c2cf4
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 5.unity
+    guid: a20ba90b255189f49af9fecb29d401f4
+  - enabled: 1
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 6.unity
+    guid: 3b42c421cd924e94aa7f387655d8d19c
+  - enabled: 1
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 7.unity
+    guid: 14902938ad286a249b1a9632d020ffdf
+  - enabled: 1
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 8.unity
+    guid: b5a26e822c7d91548b1dd8952d330ae7
+  - enabled: 1
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 9.unity
+    guid: 231daf115f218df4cbe1fbe91515224d
   m_configObjects: {}
