@@ -16,7 +16,7 @@ MonoBehaviour:
     _weaponName: weapon 0
     _description: khong
     _power: 10
-    _cooldown: 0.3
+    _cooldown: 0.5
     _range: 2
     _angle: 0
     _direction: 0
