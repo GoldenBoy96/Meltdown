@@ -247,9 +247,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.39189398}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.66035855
 --- !u!50 &2474964557996779285
 Rigidbody2D:
   serializedVersion: 4
@@ -749,7 +749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterSO: {fileID: 11400000, guid: 9241e7f89daa4d143bb1faff4e23c348, type: 2}
-  _itemDropRatePercent: 30
+  _itemDropRatePercent: 40
   _rb: {fileID: 5113020175096086183}
   _alertIcon: {fileID: 0}
   _alert: {fileID: 0}
@@ -870,9 +870,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.08237982}
+  m_Offset: {x: 0, y: -0.40242654}
   serializedVersion: 2
-  m_Radius: 1.0541911
+  m_Radius: 0.68842334
 --- !u!1 &5730731950387956575
 GameObject:
   m_ObjectHideFlags: 0

@@ -971,7 +971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsterSO: {fileID: 11400000, guid: ba6177822d8f1c34b85ec9d0a26a4631, type: 2}
-  _itemDropRatePercent: 20
+  _itemDropRatePercent: 35
   _rb: {fileID: 5113020175096086183}
   _alertIcon: {fileID: 3053408473036560424, guid: 8799ea4d41217f94a89a029ca6fc73cc, type: 3}
   _alert: {fileID: 6194674667389760342, guid: 8799ea4d41217f94a89a029ca6fc73cc, type: 3}
