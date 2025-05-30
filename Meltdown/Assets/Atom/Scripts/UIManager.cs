@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
 
     private void UpdateLevelButtons()
     {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 13);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 14);
 
         for (int i = 0; i < levelButtons.Length; i++)
         {
@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
     public void LoadLevel(int levelIndex)
     {
         string sceneName = string.Empty;
-        if (levelIndex <= 9)
+        if (levelIndex <= 9 && levelIndex > 13)
             sceneName = "Hung Level " + levelIndex;
         else
             sceneName = "Hoang Level " + levelIndex;

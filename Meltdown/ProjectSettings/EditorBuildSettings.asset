@@ -54,4 +54,7 @@ EditorBuildSettings:
     path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hoang Level
       13.unity
     guid: db41c00d45010974ab8bf8cca961bb17
+  - enabled: 1
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 14.unity
+    guid: 2cb94ef4c729c9e4f947eb965f70f452
   m_configObjects: {}
