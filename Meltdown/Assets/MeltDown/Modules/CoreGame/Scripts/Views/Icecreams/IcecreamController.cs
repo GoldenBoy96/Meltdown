@@ -133,6 +133,7 @@ namespace MeltDown
         public void DropDown()
         {
             _enablePickUp = true;
+            //_rb.AddForce(_rb.velocity * 0.5f, ForceMode2D.Impulse);
         }
 
         public void Heal(float hpToHeal)
