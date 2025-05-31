@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
     public void LoadLevel(int levelIndex)
     {
         string sceneName = string.Empty;
-        if (levelIndex <= 9 && levelIndex > 13)
+        if (levelIndex <= 9 || levelIndex > 13)
             sceneName = "Hung Level " + levelIndex;
         else
             sceneName = "Hoang Level " + levelIndex;

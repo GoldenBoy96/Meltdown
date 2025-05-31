@@ -3041,7 +3041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3214003223826443195, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: levelButtons.Array.size
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3214003223826443195, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: levelButtons.Array.data[5]
@@ -3079,6 +3079,10 @@ PrefabInstance:
       propertyPath: levelButtons.Array.data[12]
       value: 
       objectReference: {fileID: 1404536471}
+    - target: {fileID: 3214003223826443195, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
+      propertyPath: levelButtons.Array.data[13]
+      value: 
+      objectReference: {fileID: 1670986723}
     - target: {fileID: 3522448512889253253, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
