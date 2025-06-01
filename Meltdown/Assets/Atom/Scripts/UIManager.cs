@@ -61,6 +61,9 @@ public class UIManager : MonoBehaviour
         {
             Debug.LogError($"Scene '{sceneName}' not existed.");
         }
+
+        Debug.Log($"Loading scene: {sceneName}");
+
     }
 
     private bool SceneExists(string sceneName)
@@ -102,5 +105,10 @@ public class UIManager : MonoBehaviour
         int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         if (currentLevelIndex < (5 + _nonGameScenesCount - 1))
             SceneManager.LoadScene(currentLevelIndex + 1);
+    }
+
+    public void Return()
+    {
+        SceneManager.LoadScene(0);
     }
 }
