@@ -103,8 +103,10 @@ public class UIManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-        if (currentLevelIndex < (5 + _nonGameScenesCount - 1))
+        if (currentLevelIndex + 1 < SceneManager.sceneCountInBuildSettings)
             SceneManager.LoadScene(currentLevelIndex + 1);
+        else
+            Debug.LogWarning("No next level available in build settings.");
     }
 
     public void Return()
