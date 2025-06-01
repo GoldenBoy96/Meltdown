@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MeltDown.Modules.CoreGame.Scripts.Views;
 using Template;
+using TMPro;
 using UnityEngine;
 
 namespace MeltDown
@@ -16,6 +17,7 @@ namespace MeltDown
 
         [Header("Child Component")]
         [SerializeField] HealthBarController _healthBar;
+        [SerializeField] TMP_Text _healthText;
         [SerializeField] HealthBarController _pickUpCircle;
         [SerializeField] Sprite _alertIconSprite;
 
@@ -100,6 +102,7 @@ namespace MeltDown
         {
             CheckPickUp();
             _healthBar.UpdateHpBar(_icecream.Hp, _icecream.MaxHp);
+            _healthText.text = $"{(int)_icecream.Hp}/{_icecream.MaxHp}";
         }
 
         public void CheckPickUp()
