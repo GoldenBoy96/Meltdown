@@ -39,20 +39,16 @@ EditorBuildSettings:
     path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 9.unity
     guid: 231daf115f218df4cbe1fbe91515224d
   - enabled: 1
-    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hoang Level
-      10.unity
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 10.unity
     guid: 4d4342805115a6448a4813e7d3d1803f
   - enabled: 1
-    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hoang Level
-      11.unity
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 11.unity
     guid: 5db9e425923698c4d8f97821cd79ce18
   - enabled: 1
-    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hoang Level
-      12.unity
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 12.unity
     guid: 6ab493ccc7c13e0489b7974f1e43a91d
   - enabled: 1
-    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hoang Level
-      13.unity
+    path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 13.unity
     guid: db41c00d45010974ab8bf8cca961bb17
   - enabled: 1
     path: Assets/MeltDown/Modules/CoreGame/Scenes/Hung_Escort Levels/Hung Level 14.unity

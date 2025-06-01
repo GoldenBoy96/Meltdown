@@ -656,6 +656,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572500249}
   m_CullTransparentMesh: 1
+--- !u!1 &742808778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1851548773617487495, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
+  m_PrefabInstance: {fileID: 3154970906911967277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &742808779 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4098546739709351787, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
@@ -3310,7 +3315,7 @@ PrefabInstance:
     - target: {fileID: 3214003223826443195, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: _mainMenuPanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 742808778}
     - target: {fileID: 3214003223826443195, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: levelButtons.Array.size
       value: 14
