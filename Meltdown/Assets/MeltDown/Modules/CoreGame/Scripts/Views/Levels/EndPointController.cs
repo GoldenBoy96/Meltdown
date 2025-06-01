@@ -33,8 +33,7 @@ public class EndPointController : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        var player = collision.gameObject.GetComponent<CharacterController>();
-        if (collision.name == "Player")
+        if (collision.gameObject.TryGetComponent<IcecreamController>(out var icecream))
         {
             Debug.Log("Win Game");
             SetResult(Result.Win);
