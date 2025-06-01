@@ -3733,16 +3733,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5858952737308442914, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
+      propertyPath: m_text
+      value: Return
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858952737308442914, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: m_fontSize
-      value: 36
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 5858952737308442914, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: m_fontStyle
-      value: 1
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5858952737308442914, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: m_fontSizeBase
-      value: 36
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6137589760663300001, guid: 1f61b471db34dfb499c01b14a0992dab, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
